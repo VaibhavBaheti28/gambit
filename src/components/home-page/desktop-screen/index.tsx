@@ -1,18 +1,9 @@
-import React, { ReactNode, useState } from "react";
-import { bodyStyles, dateTime, navStyles } from "../styles";
+import { bodyStyles, navStyles } from "../styles";
 import Image from "next/image";
 import TuneIcon from "@mui/icons-material/Tune";
-import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import Modal from "@/dynamic-compoents/modal";
+import { DateTime } from "@/modules/date-time";
 
 const DesktopScreen = () => {
-  const date = new Date().toLocaleDateString("en-GB");
-  const temp = new Date();
-  const hours = temp.getHours();
-  const minutes = temp.getMinutes();
-  const seconds = temp.getSeconds();
-
   return (
     <>
       <nav css={navStyles}>
@@ -24,22 +15,7 @@ const DesktopScreen = () => {
             width={35}
           />
         </div>
-        <div css={dateTime}>
-          <span style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-            <CalendarTodayIcon />
-            {date}
-          </span>
-          <span style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-            <AccessTimeIcon />
-            {hours +
-              ":" +
-              (minutes < 10 ? "0" : "") +
-              minutes +
-              ":" +
-              (seconds < 10 ? "0" : "") +
-              seconds}
-          </span>
-        </div>
+        <DateTime />
         <div>
           <TuneIcon fontSize="large" />
         </div>

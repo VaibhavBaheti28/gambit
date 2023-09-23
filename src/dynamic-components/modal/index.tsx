@@ -3,7 +3,7 @@ import {
   closeIcon,
   modal,
   modalContent,
-} from "@/dynamic-compoents/modal/styles";
+} from "@/dynamic-components/modal/styles";
 
 const Modal = ({
   show,

@@ -2,15 +2,13 @@ import ResponsiveBlurImage from "@/modules/responsive-image";
 import React from "react";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import { background, logo, navStyles, screen } from "./styles";
+import { DateTime } from "@/modules/date-time";
 const LockScreen = () => {
   return (
     <>
       <div css={background} />
       <div css={screen}>
-        <nav css={navStyles}>
-          <span>Calender</span>
-          <span>Time</span>
-        </nav>
+        <DateTime />
         <ResponsiveBlurImage
           src="/M4Ever_Logo.jpg"
           alt=""

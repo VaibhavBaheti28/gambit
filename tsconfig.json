@@ -28,7 +28,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/dynamic-compoents/modal/styles.js"
+    "src/dynamic-components/modal/styles.js"
   ],
   "exclude": [
     "node_modules"

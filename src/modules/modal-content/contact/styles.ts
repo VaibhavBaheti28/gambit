@@ -18,15 +18,10 @@ export const search = css`
     transition: top 0.2s ease-in-out;
     color: slategray;
   }
-  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-    outline: none;
-    border-color: transparent;
-    box-shadow: none;
-  }
-
   .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
     outline: none;
     border-color: transparent;
+    box-shadow: none;
   }
 `;
 

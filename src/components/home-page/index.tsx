@@ -1,11 +1,10 @@
 import React, { ReactNode, useState } from "react";
-import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import TaskBar from "@/modules/task-bar";
 import { applicationList } from "@/modules/task-bar/application-list";
 import { background, screen } from "../lock-screen/styles";
 import { modalStyles, container } from "./styles";
 import DesktopScreen from "./desktop-screen";
-import Modal from "@/dynamic-compoents/modal";
+import Modal from "@/dynamic-components/modal";
 const HomePage = () => {
   const [modalElement, setModalElement] = useState("def");
   const [showModal, setShowModal] = useState(false);
