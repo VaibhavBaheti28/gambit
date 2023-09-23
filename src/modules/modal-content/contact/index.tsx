@@ -1,7 +1,9 @@
+import { useEffect, useState } from "react";
 import { search, screen, app, appContainer } from "./styles";
-import PhoneIcon from "@mui/icons-material/Phone";
-import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
+import { searchText } from "./modules/search";
 import Image from "next/image";
+import Autocomplete from "@mui/material/Autocomplete";
+import TextField from "@mui/material/TextField";
 export const items: {
   data: {
     [key: string]: {
@@ -42,8 +44,8 @@ export const items: {
       ),
       onClick: "",
     },
-    contact: {
-      displayName: "contact",
+    phone: {
+      displayName: "phone",
       Icon: (
         <>
           <Image
@@ -91,11 +93,35 @@ export const items: {
   },
 };
 
+const itemNames = ["whatsapp", "email", "phone", "linkedin", "github"];
+
 export const Contact = () => {
+  const [inputValue, setInputValue] = useState<string>("");
+
   return (
     <div css={screen}>
       <div style={{ width: "80%" }}>
-        <input css={search} />
+        <Autocomplete
+          freeSolo
+          options={itemNames}
+          value={inputValue}
+          onChange={(event, newValue) => {
+            if (typeof newValue === "string") {
+              setInputValue(newValue);
+            } else {
+              setInputValue("");
+            }
+          }}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              label="Type something..."
+              variant="outlined"
+              onChange={(e) => setInputValue(e.target.value)}
+              css={search}
+            />
+          )}
+        />
       </div>
       <div css={appContainer}>
         {Object.values(items.data).map((item) => {
@@ -103,11 +129,12 @@ export const Contact = () => {
           const handleOnClick = () => {
             console.log({ displayName });
           };
-          return (
-            <div key={displayName} onClick={handleOnClick}>
-              {Icon}
-            </div>
-          );
+          if (searchText(displayName, inputValue))
+            return (
+              <div key={displayName} onClick={handleOnClick}>
+                {Icon}
+              </div>
+            );
         })}
       </div>
     </div>

@@ -9,12 +9,25 @@ export const screen = css`
 `;
 
 export const search = css`
-  width: 100%;
-  height: 3vw;
-  margin-bottom: 4vw;
-  border-radius: 1rem;
-  font-size: 1.5rem;
-  padding: 0 1rem;
+  margin-bottom: 3vw;
+  border-radius: 2rem;
+  background-color: whitesmoke;
+
+  label.Mui-focused {
+    top: -10px; /* Adjust this value as needed */
+    transition: top 0.2s ease-in-out;
+    color: slategray;
+  }
+  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    outline: none;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+    outline: none;
+    border-color: transparent;
+  }
 `;
 
 export const appContainer = css`
@@ -31,4 +44,5 @@ export const app = css`
   border-radius: 2rem;
   color: black;
   background: transparent;
+  cursor: pointer;
 `;
