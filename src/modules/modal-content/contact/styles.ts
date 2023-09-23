@@ -23,6 +23,11 @@ export const search = css`
     border-color: transparent;
     box-shadow: none;
   }
+  .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    outline: none;
+    border-color: transparent;
+    box-shadow: none;
+  }
 `;
 
 export const appContainer = css`
