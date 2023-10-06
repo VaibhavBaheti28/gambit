@@ -38,7 +38,10 @@ export const DateTime = () => {
         <CalendarTodayIcon />
         {currentDate}
       </span>
-      <span style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+      <span
+        style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+        suppressHydrationWarning
+      >
         <AccessTimeIcon />
         {currentTime}
       </span>

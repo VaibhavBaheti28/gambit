@@ -27,7 +27,7 @@ const TaskBar = ({
             setShowModal(true);
             setModalElement(displayName);
           } else {
-            router.push(onClick);
+            router.push(onClick || "");
           }
         };
         return (

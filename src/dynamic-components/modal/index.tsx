@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CloseIcon from "@mui/icons-material/Close";
 import {
   closeIcon,
   modal,
@@ -21,9 +22,7 @@ const Modal = ({
   return (
     <div css={modal} style={modalStyles}>
       <div css={modalContent}>
-        <span css={closeIcon} onClick={onClose}>
-          &times;
-        </span>
+        <CloseIcon css={closeIcon} onClick={onClose} />
         {children}
       </div>
     </div>

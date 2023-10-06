@@ -2,8 +2,18 @@ import { bodyStyles, navStyles } from "../styles";
 import Image from "next/image";
 import TuneIcon from "@mui/icons-material/Tune";
 import { DateTime } from "@/modules/date-time";
+import { useState } from "react";
+import { configContent } from "./styles";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import HelpIcon from "@mui/icons-material/Help";
+import LockIcon from "@mui/icons-material/Lock";
 
 const DesktopScreen = () => {
+  const [config, setConfig] = useState(false);
+  const configStyles = {
+    display: config ? "block" : "none",
+  };
   return (
     <>
       <nav css={navStyles}>
@@ -16,10 +26,26 @@ const DesktopScreen = () => {
           />
         </div>
         <DateTime />
-        <div>
+        <div onClick={() => setConfig(!config)}>
           <TuneIcon fontSize="large" />
         </div>
       </nav>
+      <div style={configStyles}>
+        <div css={configContent}>
+          <div>
+            <LightModeIcon fontSize="large" />
+          </div>
+          <div>
+            <DarkModeIcon fontSize="large" />
+          </div>
+          <div>
+            <HelpIcon fontSize="large" />
+          </div>
+          <div>
+            <LockIcon fontSize="large" />
+          </div>
+        </div>
+      </div>
       <div css={bodyStyles}>
         <div>Vaibhav Baheti</div>
         <div>Logo</div>
