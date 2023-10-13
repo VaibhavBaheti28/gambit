@@ -26,22 +26,25 @@ const DesktopScreen = () => {
           />
         </div>
         <DateTime />
-        <div onClick={() => setConfig(!config)}>
+        <div
+          onClick={() => setConfig(!config)}
+          style={config ? { backgroundColor: "slategray", opacity: "0.5" } : {}}
+        >
           <TuneIcon fontSize="large" />
         </div>
       </nav>
       <div style={configStyles}>
         <div css={configContent}>
-          <div>
+          <div style={{ justifySelf: "center" }}>
             <LightModeIcon fontSize="large" />
           </div>
-          <div>
+          <div style={{ justifySelf: "center" }}>
             <DarkModeIcon fontSize="large" />
           </div>
-          <div>
+          <div style={{ justifySelf: "center" }}>
             <HelpIcon fontSize="large" />
           </div>
-          <div>
+          <div style={{ justifySelf: "center" }}>
             <LockIcon fontSize="large" />
           </div>
         </div>

@@ -15,7 +15,7 @@ export const screen = css`
 
 export const navStyles = css`
   min-height: 25px;
-  width: 90%;
+  width: 98%;
   padding: 1 rem;
   font-size: 2vw;
   font-family: Verdana;

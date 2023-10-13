@@ -15,6 +15,7 @@ export const dateTime = css`
   margin-top: 0.5vw;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 5rem;
   span {
     font-size: 1vw;
