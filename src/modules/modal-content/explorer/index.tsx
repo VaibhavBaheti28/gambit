@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateString } from "@/store/mySlice";
 import { RootState } from "@/store/reducers/reducers";
 import ExplorerContact from "../explorerContact";
+import Projects from "../projects";
 
 export const Explorer = () => {
   const myString = useSelector((state: RootState) => state.myReducer.myString);
@@ -53,6 +54,8 @@ export const Explorer = () => {
       );
     case "Contact":
       return <ExplorerContact />;
+    case "Projects":
+      return <Projects />;
     default:
       return <></>;
   }

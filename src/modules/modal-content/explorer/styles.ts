@@ -6,7 +6,10 @@ export const screen = css`
   grid-template-columns: [f] 30% [s] 40% [t] 30% [end];
   grid-template-rows: [f] 15vw [s] 15vw [end];
   background-image: linear-gradient(to bottom right, purple, blue);
-
+  div:hover {
+    cursor: pointer;
+    color: blanchedalmond;
+  }
   border-top: 2vw solid black;
 `;
 

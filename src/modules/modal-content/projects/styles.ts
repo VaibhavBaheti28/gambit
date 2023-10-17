@@ -5,16 +5,14 @@ export const container = css`
   height: 33vw;
   border-top: 2vw solid black;
   border-bottom: 2px solid black;
-
   border-right: 1px solid black;
-  border-left: 2px solid black;
   background-color: antiquewhite;
   display: flex;
   flex-direction: row;
   align-items: center;
 `;
 
-export const aboutContainer = css`
+export const projectContainer = css`
   padding: 1vw;
   display: flex;
   flex-direction: column;
@@ -27,15 +25,5 @@ export const aboutContainer = css`
   }
   p {
     font-size: 2vw;
-  }
-`;
-
-export const whoami = css`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  h1 {
-    padding: 0;
-    margin: 0;
   }
 `;

@@ -6,9 +6,10 @@ export const sidebar = css`
   height: 33vw;
   position: sticky;
   background-color: slategray;
-  border-right: 2px solid black;
-  border-left: 2px solid black;
+  border-left: 3px solid black;
   border-bottom: 2px solid black;
+
+  border-right: 4px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,6 +20,10 @@ export const sidebar = css`
     margin: 0;
     font-size: 3vw;
     padding: 1vw;
+  }
+  p:hover {
+    cursor: pointer;
+    font-size: 3.1vw;
   }
 `;
 

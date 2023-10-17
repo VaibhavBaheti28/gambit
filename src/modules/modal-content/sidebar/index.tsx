@@ -14,8 +14,19 @@ export const Sidebar = () => {
         <ExploreIcon />
         <p>Explorer</p>
       </div>
-      <div>
+      <div
+        onClick={() => {
+          dispatch(updateString("About"));
+        }}
+      >
         <p>About Me</p>
+      </div>
+      <div
+        onClick={() => {
+          dispatch(updateString("Projects"));
+        }}
+      >
+        <p>Projects</p>
       </div>
       <div>
         <p>Skills</p>

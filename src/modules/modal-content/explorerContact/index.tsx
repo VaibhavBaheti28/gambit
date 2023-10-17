@@ -1,12 +1,14 @@
 import { Contact } from "../contact";
 import Sidebar from "../sidebar";
-import { container } from "./styles";
+import { contactContainer, container } from "./styles";
 
 export const ExplorerContact = () => {
   return (
     <div css={container}>
       <Sidebar />
-      <Contact />
+      <div css={contactContainer}>
+        <Contact />
+      </div>
     </div>
   );
 };
