@@ -1,5 +1,6 @@
+import store from "@/store/store";
 import type { AppProps } from "next/app";
-import { wrapper, store } from "../store/store";
+
 import { Provider } from "react-redux";
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -11,4 +12,4 @@ function App({ Component, pageProps }: AppProps) {
   );
 }
 
-export default wrapper.withRedux(App);
+export default App;

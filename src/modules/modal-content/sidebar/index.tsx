@@ -1,7 +1,13 @@
 import ExploreIcon from "@mui/icons-material/Explore";
 import { explore, sidebar } from "./styles";
 import { Contact } from "../contact";
+import { useDispatch, useSelector } from "react-redux";
+import { updateString } from "@/store/mySlice";
+import { RootState } from "@/store/reducers/reducers";
 export const Sidebar = () => {
+  const myString = useSelector((state: RootState) => state.myReducer.myString);
+
+  const dispatch = useDispatch();
   return (
     <div css={sidebar}>
       <div css={explore}>
@@ -19,7 +25,7 @@ export const Sidebar = () => {
       </div>
       <div
         onClick={() => {
-          return <Contact />;
+          dispatch(updateString("Contact"));
         }}
       >
         <p>Contact</p>

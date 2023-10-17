@@ -1,12 +1,16 @@
-import { useRouter } from "next/router";
 import { about, blog, certificate, contact, projects, screen } from "./styles";
 import About from "../about";
-import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { updateString } from "@/store/mySlice";
+import { RootState } from "@/store/reducers/reducers";
+import ExplorerContact from "../explorerContact";
 
 export const Explorer = () => {
-  let router = useRouter();
-  const [comp, setComp] = useState("Explorer");
-  switch (comp) {
+  const myString = useSelector((state: RootState) => state.myReducer.myString);
+
+  const dispatch = useDispatch();
+
+  switch (myString) {
     case "About":
       return <About />;
     case "Explorer":
@@ -15,7 +19,7 @@ export const Explorer = () => {
           <div
             css={about}
             onClick={() => {
-              setComp("About");
+              dispatch(updateString("About"));
             }}
           >
             About Me
@@ -23,7 +27,7 @@ export const Explorer = () => {
           <div
             css={projects}
             onClick={() => {
-              setComp("Projects");
+              dispatch(updateString("Projects"));
             }}
           >
             Projects
@@ -31,7 +35,7 @@ export const Explorer = () => {
           <div
             css={certificate}
             onClick={() => {
-              setComp("Certificates");
+              dispatch(updateString("Certificates"));
             }}
           >
             Certificates
@@ -40,13 +44,15 @@ export const Explorer = () => {
           <div
             css={contact}
             onClick={() => {
-              setComp("Contact");
+              dispatch(updateString("Contact"));
             }}
           >
             Contacts
           </div>
         </div>
       );
+    case "Contact":
+      return <ExplorerContact />;
     default:
       return <></>;
   }
