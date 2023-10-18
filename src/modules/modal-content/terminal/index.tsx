@@ -40,11 +40,11 @@ export const Terminal = () => {
       setInput("");
     }
   };
-
+  const scrollableDiv = document.getElementById("terminalContent");
   useEffect(() => {
     if (scrollableDiv) scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
-  }, [output]);
-  const scrollableDiv = document.getElementById("terminalContent");
+  }, [output, scrollableDiv]);
+
   return (
     <div>
       <div css={navbar}>Terminal</div>
