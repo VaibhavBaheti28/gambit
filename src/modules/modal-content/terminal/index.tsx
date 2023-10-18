@@ -16,12 +16,11 @@ export const Terminal = () => {
   const [output, setOutput] = useState<string[]>([]);
 
   const handleExecuteCommand = () => {
-    if (commands[input]?.slug) router.push(commands[input]?.slug);
-    if (commands[input]?.text)
+    if (commands.command[input]?.text)
       return setOutput([
         ...output,
         `Monarch4Ever: ${input}`,
-        commands[input].text,
+        commands.command[input].text || "",
       ]);
 
     setOutput([...output, `Monarch4Ever: ${input}`, "Command not Found"]);
