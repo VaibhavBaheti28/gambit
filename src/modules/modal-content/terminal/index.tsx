@@ -49,8 +49,8 @@ export const Terminal = () => {
     <div>
       <div css={navbar}>Terminal</div>
       <div id="terminalContent" css={container}>
-        {output.map((line: string) => {
-          return <p>{line}</p>;
+        {output.map((line: string, key: number) => {
+          return <p key={key}>{line}</p>;
         })}
         <div css={terminalContent}>
           <h3>Monarch4Ever: </h3>
