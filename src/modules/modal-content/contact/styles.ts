@@ -6,7 +6,7 @@ export const screen = css`
   flex-direction: column;
   align-items: center;
   background-image: linear-gradient(to bottom right, black, grey);
-  min-height: 35vw;
+  height: 100%;
   border-radius: 1rem;
 `;
 

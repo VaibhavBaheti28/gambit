@@ -16,11 +16,11 @@ export const modal = css`
   position: fixed;
   z-index: 100;
   opacity: 0.7;
-  bottom: 5vw;
+  bottom: 6.5vw;
   left: 10vw;
   right: 10vw;
   top: 5vw;
-  overflow: auto;
+  overflow: hidden;
   animation: ${borderAnimation} 1s ease-in-out forwards;
 `;
 
@@ -31,11 +31,12 @@ export const modalContent = css`
 
 /* Close button */
 export const closeIcon = css`
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: fixed;
+  top: 5vw;
+  right: 10vw;
   width: 2vw;
   height: 2vw;
   color: red;
   cursor: pointer;
+  z-index: 500;
 `;

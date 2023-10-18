@@ -10,7 +10,12 @@ export const Sidebar = () => {
   const dispatch = useDispatch();
   return (
     <div css={sidebar}>
-      <div css={explore}>
+      <div
+        css={explore}
+        onClick={() => {
+          dispatch(updateString("Explorer"));
+        }}
+      >
         <ExploreIcon />
         <p>Explorer</p>
       </div>
@@ -28,7 +33,11 @@ export const Sidebar = () => {
       >
         <p>Projects</p>
       </div>
-      <div>
+      <div
+        onClick={() => {
+          dispatch(updateString("Skills"));
+        }}
+      >
         <p>Skills</p>
       </div>
       <div>

@@ -1,16 +1,25 @@
 import { css } from "@emotion/react";
 
+export const navbar = css`
+  height: 2vw;
+  position: fixed;
+  width: 79%;
+  background-color: #8f8d8d;
+  z-index: 5;
+  font-size: 1.5vw;
+  padding-left: 1vw;
+`;
 export const container = css`
-  height: 90%;
   background-color: black;
   color: green;
-  border-top: 2vw solid darkgray;
-  border-top: relative;
   scroll-behavior: smooth;
   padding: 0;
   padding-left: 1vw;
   padding-top: 20px;
-
+  min-height: 32vw;
+  max-height: 32vw;
+  overflow: auto;
+  padding-top: 3vw;
   p {
     line-height: 15px;
     font-size: 20px;

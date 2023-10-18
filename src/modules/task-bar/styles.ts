@@ -20,4 +20,9 @@ export const shortcutIcon = css`
   height: 2rem;
   align-items: center;
   justify-content: center;
+  &:hover {
+    transform: translateY(-5px);
+    transform: translateX(2px);
+    box-shadow: 5px 5px rgba(0, 50, 0, 0.3); /* Adjust the shadow properties as needed */
+  }
 `;

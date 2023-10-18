@@ -1,5 +1,11 @@
-import { useState } from "react";
-import { container, cssTyping, inputBox, terminalContent } from "./styles";
+import { useEffect, useState } from "react";
+import {
+  container,
+  cssTyping,
+  inputBox,
+  navbar,
+  terminalContent,
+} from "./styles";
 import { commands } from "./constants";
 import { useRouter } from "next/router";
 
@@ -34,20 +40,28 @@ export const Terminal = () => {
       setInput("");
     }
   };
+
+  useEffect(() => {
+    if (scrollableDiv) scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
+  }, [output]);
+  const scrollableDiv = document.getElementById("terminalContent");
   return (
-    <div css={container}>
-      {output.map((line: string) => {
-        return <p>{line}</p>;
-      })}
-      <div css={terminalContent}>
-        <h3>Monarch4Ever: </h3>
-        <input
-          type="text"
-          value={input}
-          css={inputBox}
-          onChange={handleInputChange}
-          onKeyPress={handleInputKeyPress}
-        />
+    <div>
+      <div css={navbar}>Terminal</div>
+      <div id="terminalContent" css={container}>
+        {output.map((line: string) => {
+          return <p>{line}</p>;
+        })}
+        <div css={terminalContent}>
+          <h3>Monarch4Ever: </h3>
+          <input
+            type="text"
+            value={input}
+            css={inputBox}
+            onChange={handleInputChange}
+            onKeyPress={handleInputKeyPress}
+          />
+        </div>
       </div>
     </div>
   );

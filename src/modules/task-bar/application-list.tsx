@@ -3,6 +3,7 @@ import AppsIcon from "@mui/icons-material/Apps";
 import DescriptionIcon from "@mui/icons-material/Description";
 import ExploreIcon from "@mui/icons-material/Explore";
 import TerminalIcon from "@mui/icons-material/Terminal";
+import BookIcon from "@mui/icons-material/Book";
 import { Contact } from "../modal-content/contact";
 import { Explorer } from "../modal-content/explorer";
 import { Terminal } from "../modal-content/terminal";
@@ -41,6 +42,12 @@ export const applicationList: {
       modalComponent: <Terminal />,
     },
 
+    blog: {
+      displayName: "blog",
+      Icon: <BookIcon />,
+      onClick:
+        "https://medium.com/@vaibhavbaheti28/my-memorable-trip-to-agumbe-f9e75412c801",
+    },
     def: {
       displayName: "def",
       Icon: <AppsIcon />,

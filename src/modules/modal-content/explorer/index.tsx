@@ -5,6 +5,7 @@ import { updateString } from "@/store/mySlice";
 import { RootState } from "@/store/reducers/reducers";
 import ExplorerContact from "../explorerContact";
 import Projects from "../projects";
+import Skills from "../skills";
 
 export const Explorer = () => {
   const myString = useSelector((state: RootState) => state.myReducer.myString);
@@ -14,6 +15,12 @@ export const Explorer = () => {
   switch (myString) {
     case "About":
       return <About />;
+    case "Skills":
+      return <Skills />;
+    case "Contact":
+      return <ExplorerContact />;
+    case "Projects":
+      return <Projects />;
     case "Explorer":
       return (
         <div css={screen}>
@@ -41,7 +48,14 @@ export const Explorer = () => {
           >
             Certificates
           </div>
-          <div css={blog}>Blog</div>
+          <div
+            css={blog}
+            onClick={() => {
+              dispatch(updateString("Skills"));
+            }}
+          >
+            Skills
+          </div>
           <div
             css={contact}
             onClick={() => {
@@ -52,10 +66,7 @@ export const Explorer = () => {
           </div>
         </div>
       );
-    case "Contact":
-      return <ExplorerContact />;
-    case "Projects":
-      return <Projects />;
+
     default:
       return <></>;
   }
