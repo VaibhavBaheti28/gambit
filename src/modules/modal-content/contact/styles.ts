@@ -5,8 +5,8 @@ export const screen = css`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: linear-gradient(to bottom right, black, grey);
-  min-height: 35vw;
+  background-image: linear-gradient(135deg, #f43b47, #fb8b24);
+  height: 100%;
   border-radius: 1rem;
 `;
 

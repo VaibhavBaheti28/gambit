@@ -7,35 +7,22 @@ export const container = css`
   border-bottom: 2px solid black;
 
   border-right: 1px solid black;
-  border-left: 2px solid black;
   background-color: antiquewhite;
   display: flex;
   flex-direction: row;
   align-items: center;
 `;
 
-export const aboutContainer = css`
-  padding: 1vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  h1 {
-    padding: 0;
-
-    margin: 0;
-    font-size: 3vw;
-  }
-  p {
-    font-size: 2vw;
-  }
-`;
-
-export const whoami = css`
+export const contactContainer = css`
+  width: 100%;
+  height: 33vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  h1 {
-    padding: 0;
-    margin: 0;
+  background-image: linear-gradient(to bottom right, black, grey);
+  .css-kifl40-Contact {
+    border-radius: 0;
+    min-height: 0;
+    height: 32vw;
   }
 `;

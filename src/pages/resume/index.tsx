@@ -1,9 +1,10 @@
-import { display } from "./styles";
-
 export const Resume = () => {
   return (
     <div>
-      <embed src="/Resume.pdf" css={display} />
+      <embed
+        src="/static/Resume.pdf"
+        style={{ display: "block", width: "100%", minHeight: "99vw" }}
+      />
     </div>
   );
 };

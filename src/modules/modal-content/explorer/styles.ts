@@ -3,10 +3,16 @@ import { css } from "@emotion/react";
 export const screen = css`
   display: grid;
   padding: 2vw;
+  overflow: hidden;
+
+  height: 100%;
   grid-template-columns: [f] 30% [s] 40% [t] 30% [end];
   grid-template-rows: [f] 15vw [s] 15vw [end];
-  background-image: linear-gradient(to bottom right, purple, blue);
-
+  background-image: linear-gradient(to bottom, cyan, orange);
+  div:hover {
+    cursor: pointer;
+    color: blanchedalmond;
+  }
   border-top: 2vw solid black;
 `;
 

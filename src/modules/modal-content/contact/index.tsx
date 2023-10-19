@@ -4,12 +4,14 @@ import { searchText } from "./modules/search";
 import Image from "next/image";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
+import { useRouter } from "next/router";
 export const items: {
   data: {
     [key: string]: {
       displayName: string;
       Icon: React.JSX.Element;
       onClick: string;
+      slug?: string;
     };
   };
 } = {
@@ -19,7 +21,7 @@ export const items: {
       Icon: (
         <>
           <Image
-            src="/Whatsapp.png"
+            src="/static/Whatsapp.png"
             alt="Whatsapp-logo"
             height={100}
             width={100}
@@ -34,7 +36,7 @@ export const items: {
       Icon: (
         <>
           <Image
-            src="/mail.png"
+            src="/static/mail.png"
             alt="Mail-logo"
             height={100}
             width={100}
@@ -49,7 +51,7 @@ export const items: {
       Icon: (
         <>
           <Image
-            src="/phone.png"
+            src="/static/phone.png"
             alt="Phone-logo"
             height={100}
             width={100}
@@ -65,7 +67,7 @@ export const items: {
       Icon: (
         <>
           <Image
-            src="/linkedin.png"
+            src="/static/linkedin.png"
             alt="Linkedin-logo"
             height={100}
             width={100}
@@ -74,13 +76,14 @@ export const items: {
         </>
       ),
       onClick: "",
+      slug: "https://www.linkedin.com/in/vaibhav-baheti-28-m4ever/",
     },
     Github: {
       displayName: "github",
       Icon: (
         <>
           <Image
-            src="/GitHub.png"
+            src="/static/GitHub.png"
             alt="Github-logo"
             height={100}
             width={100}
@@ -89,6 +92,7 @@ export const items: {
         </>
       ),
       onClick: "",
+      slug: "https://github.com/VaibhavBaheti28?tab=repositories",
     },
   },
 };
@@ -97,7 +101,7 @@ const itemNames = ["whatsapp", "email", "phone", "linkedin", "github"];
 
 export const Contact = () => {
   const [inputValue, setInputValue] = useState<string>("");
-
+  const router = useRouter();
   return (
     <div css={screen}>
       <div style={{ width: "80%" }}>
@@ -125,9 +129,9 @@ export const Contact = () => {
       </div>
       <div css={appContainer}>
         {Object.values(items.data).map((item) => {
-          const { displayName, onClick, Icon } = item;
+          const { displayName, onClick, Icon, slug } = item;
           const handleOnClick = () => {
-            console.log({ displayName });
+            if (slug) router.push(slug);
           };
           if (searchText(displayName, inputValue))
             return (

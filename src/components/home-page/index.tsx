@@ -5,9 +5,12 @@ import { background, screen } from "../lock-screen/styles";
 import { modalStyles, container } from "./styles";
 import DesktopScreen from "./desktop-screen";
 import Modal from "@/dynamic-components/modal";
+import { useDispatch } from "react-redux";
+import { updateString } from "@/store/mySlice";
 const HomePage = () => {
   const [modalElement, setModalElement] = useState("def");
   const [showModal, setShowModal] = useState(false);
+  const dispatch = useDispatch();
   return (
     <>
       <div css={background} />
@@ -17,7 +20,10 @@ const HomePage = () => {
 
           <Modal
             show={showModal}
-            onClose={() => setShowModal(false)}
+            onClose={() => {
+              setShowModal(false);
+              dispatch(updateString("Explorer"));
+            }}
             aria-labelledby="modal-application"
             aria-describedby="modal-modal-description"
           >
