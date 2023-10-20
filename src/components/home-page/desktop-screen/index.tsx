@@ -8,21 +8,28 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import HelpIcon from "@mui/icons-material/Help";
 import LockIcon from "@mui/icons-material/Lock";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/store/reducers/reducers";
+import { updateTheme } from "@/store/mySlice";
 
 const DesktopScreen = () => {
   const [config, setConfig] = useState(false);
   const configStyles = {
     display: config ? "block" : "none",
   };
+  const theme = useSelector((state: RootState) => state.myReducer.theme);
+
+  const dispatch = useDispatch();
   return (
     <>
       <nav css={navStyles}>
-        <div style={{ color: "white" }}>
+        <div>
           <Image
             src="static/M4Ever_Logo.jpg"
             alt="M4Ever-logo"
             height={35}
             width={35}
+            style={{ borderRadius: "35" }}
           />
         </div>
         <DateTime />
@@ -35,10 +42,20 @@ const DesktopScreen = () => {
       </nav>
       <div style={configStyles}>
         <div css={configContent}>
-          <div style={{ justifySelf: "center" }}>
+          <div
+            style={{ justifySelf: "center" }}
+            onClick={() => {
+              dispatch(updateTheme("light"));
+            }}
+          >
             <LightModeIcon fontSize="large" />
           </div>
-          <div style={{ justifySelf: "center" }}>
+          <div
+            style={{ justifySelf: "center" }}
+            onClick={() => {
+              dispatch(updateTheme("dark"));
+            }}
+          >
             <DarkModeIcon fontSize="large" />
           </div>
           <div style={{ justifySelf: "center" }}>

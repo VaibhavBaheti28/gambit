@@ -1,12 +1,22 @@
 import ResponsiveBlurImage from "@/modules/responsive-image";
 import React from "react";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
-import { background, logo, navStyles, screen } from "./styles";
+import {
+  darkBackground,
+  lightBackground,
+  logo,
+  navStyles,
+  screen,
+} from "./styles";
 import { DateTime } from "@/modules/date-time";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/reducers/reducers";
 const LockScreen = () => {
+  const theme = useSelector((state: RootState) => state.myReducer.theme);
+  const homeScreen = theme === "light" ? lightBackground : darkBackground;
   return (
     <>
-      <div css={background} />
+      <div css={homeScreen} />
       <div css={screen}>
         <DateTime />
         <ResponsiveBlurImage
