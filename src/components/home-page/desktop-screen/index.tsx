@@ -16,6 +16,7 @@ const DesktopScreen = () => {
   const [config, setConfig] = useState(false);
   const configStyles = {
     display: config ? "block" : "none",
+    zIndex: 200,
   };
   const theme = useSelector((state: RootState) => state.myReducer.theme);
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const DesktopScreen = () => {
       <nav css={navStyles}>
         <div>
           <Image
-            src="static/M4Ever_Logo.jpg"
+            src="/static/M4Ever_Logo.jpg"
             alt="M4Ever-logo"
             height={35}
             width={35}
