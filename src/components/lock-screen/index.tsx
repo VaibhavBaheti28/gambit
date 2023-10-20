@@ -17,10 +17,13 @@ const LockScreen = () => {
   return (
     <>
       <div css={homeScreen} />
-      <div css={screen}>
+      <div
+        css={screen}
+        style={theme === "light" ? { color: "black" } : { color: "white" }}
+      >
         <DateTime />
         <ResponsiveBlurImage
-          src="static/M4Ever_Logo.jpg"
+          src="/static/M4Ever_Logo.jpg"
           alt=""
           height={100}
           width={100}

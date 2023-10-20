@@ -1,9 +1,19 @@
+import { useSelector } from "react-redux";
 import Sidebar from "../sidebar";
 import { aboutContainer, container, whoami } from "./styles";
+import { RootState } from "@/store/reducers/reducers";
 
 export const About = () => {
+  const theme = useSelector((state: RootState) => state.myReducer.theme);
   return (
-    <div css={container}>
+    <div
+      css={container}
+      style={
+        theme === "light"
+          ? { borderTop: "2vw solid black" }
+          : { borderTop: "2vw solid #455361", borderLeft: "2px solid #455361" }
+      }
+    >
       <Sidebar />
       <div css={aboutContainer}>
         <div css={whoami}>

@@ -1,6 +1,8 @@
+import { useSelector } from "react-redux";
 import Sidebar from "../sidebar";
 import { projectContainer, container } from "./styles";
 import { url } from "inspector";
+import { RootState } from "@/store/reducers/reducers";
 
 interface Project {
   id: number;
@@ -31,8 +33,16 @@ const projects: Project[] = [
 ];
 
 export const Projects = () => {
+  const theme = useSelector((state: RootState) => state.myReducer.theme);
   return (
-    <div css={container}>
+    <div
+      css={container}
+      style={
+        theme === "light"
+          ? { borderTop: "2vw solid black" }
+          : { borderTop: "2vw solid #455361", borderLeft: "2px solid #455361" }
+      }
+    >
       <Sidebar />
       <div css={projectContainer}>
         <div style={{ display: "flex" }}>

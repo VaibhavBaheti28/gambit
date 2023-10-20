@@ -4,11 +4,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface MyState {
   myString: string;
   theme: string;
+  isLocked: boolean;
 }
 
 const initialState: MyState = {
   myString: "Explorer",
   theme: "dark",
+  isLocked: true,
 };
 
 const mySlice = createSlice({
@@ -21,8 +23,11 @@ const mySlice = createSlice({
     updateTheme: (state, action: PayloadAction<string>) => {
       state.theme = action.payload;
     },
+    updateLock: (state, action: PayloadAction<boolean>) => {
+      state.isLocked = action.payload;
+    },
   },
 });
 
-export const { updateString, updateTheme } = mySlice.actions;
+export const { updateString, updateTheme, updateLock } = mySlice.actions;
 export default mySlice.reducer;

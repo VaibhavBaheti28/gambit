@@ -9,7 +9,7 @@ import Skills from "../skills";
 
 export const Explorer = () => {
   const myString = useSelector((state: RootState) => state.myReducer.myString);
-
+  const theme = useSelector((state: RootState) => state.myReducer.theme);
   const dispatch = useDispatch();
 
   switch (myString) {
@@ -23,7 +23,14 @@ export const Explorer = () => {
       return <Projects />;
     case "Explorer":
       return (
-        <div css={screen}>
+        <div
+          css={screen}
+          style={
+            theme === "light"
+              ? { borderTop: "2vw solid black" }
+              : { borderTop: "2vw solid #455361" }
+          }
+        >
           <div
             css={about}
             onClick={() => {

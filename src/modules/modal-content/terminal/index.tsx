@@ -21,6 +21,7 @@ export const Terminal = () => {
   const [output, setOutput] = useState<string[]>([]);
   const dispatch = useDispatch();
   const myString = useSelector((state: RootState) => state.myReducer.myString);
+  const theme = useSelector((state: RootState) => state.myReducer.theme);
   const handleExecuteCommand = () => {
     if (commands.command[input]) {
       if (commands.command[input].text)
@@ -71,8 +72,17 @@ export const Terminal = () => {
     default:
       return (
         <div>
-          <div css={navbar}>Terminal</div>
-          <div id="terminalContent" css={container}>
+          <div
+            css={navbar}
+            style={theme === "dark" ? { backgroundColor: "#2b2626" } : {}}
+          >
+            Terminal
+          </div>
+          <div
+            id="terminalContent"
+            css={container}
+            style={theme === "dark" ? { backgroundColor: "antiquewhite" } : {}}
+          >
             {output.map((line: string, key: number) => {
               return <p key={key}>{line}</p>;
             })}

@@ -13,7 +13,6 @@ export const screen = css`
     cursor: pointer;
     color: blanchedalmond;
   }
-  border-top: 2vw solid black;
 `;
 
 export const about = css`

@@ -1,9 +1,19 @@
+import { useSelector } from "react-redux";
 import Sidebar from "../sidebar";
 import { container, skillsContainer } from "./styles";
+import { RootState } from "@/store/reducers/reducers";
 
 export const Skills = () => {
+  const theme = useSelector((state: RootState) => state.myReducer.theme);
   return (
-    <div css={container}>
+    <div
+      css={container}
+      style={
+        theme === "light"
+          ? { borderTop: "2vw solid black" }
+          : { borderTop: "2vw solid #455361", borderLeft: "2px solid #455361" }
+      }
+    >
       <Sidebar />
       <div css={skillsContainer}>
         <ul>

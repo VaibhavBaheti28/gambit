@@ -3,11 +3,15 @@ import { Inter } from "next/font/google";
 import LockScreen from "@/components/lock-screen";
 import HomePage from "@/components/home-page";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/store/reducers/reducers";
+import { updateLock } from "@/store/mySlice";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [isLocked, setIsLocked] = useState(true);
+  const dispatch = useDispatch();
+  const isLocked = useSelector((state: RootState) => state.myReducer.isLocked);
   return (
     <>
       <Head>
@@ -17,7 +21,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {isLocked ? (
-        <div onClick={() => setIsLocked(false)}>
+        <div onClick={() => dispatch(updateLock(false))}>
           <LockScreen />
         </div>
       ) : (
