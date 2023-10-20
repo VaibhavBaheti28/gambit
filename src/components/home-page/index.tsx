@@ -1,19 +1,22 @@
 import React, { ReactNode, useState } from "react";
 import TaskBar from "@/modules/task-bar";
 import { applicationList } from "@/modules/task-bar/application-list";
-import { background, screen } from "../lock-screen/styles";
-import { modalStyles, container } from "./styles";
+import { darkBackground, lightBackground, screen } from "../lock-screen/styles";
+import { container } from "./styles";
 import DesktopScreen from "./desktop-screen";
 import Modal from "@/dynamic-components/modal";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateString } from "@/store/mySlice";
+import { RootState } from "@/store/reducers/reducers";
 const HomePage = () => {
   const [modalElement, setModalElement] = useState("def");
   const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
+  const theme = useSelector((state: RootState) => state.myReducer.theme);
+  const homeScreen = theme === "light" ? lightBackground : darkBackground;
   return (
     <>
-      <div css={background} />
+      <div css={homeScreen} />
       <section css={screen}>
         <div css={container}>
           <DesktopScreen />
