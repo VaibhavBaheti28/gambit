@@ -35,7 +35,7 @@ export const Terminal = () => {
 
         return setOutput([...output, `Monarch4Ever: ${input}`, input]);
       } else {
-        setOutput([""]);
+        return setOutput([""]);
       }
     }
     setOutput([...output, `Monarch4Ever: ${input}`, "Command not Found"]);
