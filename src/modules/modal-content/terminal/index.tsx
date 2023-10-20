@@ -29,11 +29,13 @@ export const Terminal = () => {
           `Monarch4Ever: ${input}`,
           commands.command[input].text || "",
         ]);
-      if (commands.command[input].modalComponent) {
+      else if (commands.command[input].modalComponent) {
         console.log(commands.command[input]);
         dispatch(updateString(input));
 
         return setOutput([...output, `Monarch4Ever: ${input}`, input]);
+      } else {
+        setOutput([""]);
       }
     }
     setOutput([...output, `Monarch4Ever: ${input}`, "Command not Found"]);
