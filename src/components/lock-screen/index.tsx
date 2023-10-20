@@ -23,7 +23,11 @@ const LockScreen = () => {
       >
         <DateTime />
         <ResponsiveBlurImage
+<<<<<<< HEAD
           src="static/M4Ever_Logo.jpg"
+=======
+          src="staticM4Ever_Logo.jpg"
+>>>>>>> 545c7c8f6065678136c9c37bc60198f9972a4318
           alt=""
           height={100}
           width={100}

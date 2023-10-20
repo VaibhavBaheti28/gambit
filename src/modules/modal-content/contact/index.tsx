@@ -21,7 +21,11 @@ export const items: {
       Icon: (
         <>
           <Image
+<<<<<<< HEAD
             src="static/Whatsapp.png"
+=======
+            src="staticWhatsapp.png"
+>>>>>>> 545c7c8f6065678136c9c37bc60198f9972a4318
             alt="Whatsapp-logo"
             height={100}
             width={100}
@@ -36,7 +40,11 @@ export const items: {
       Icon: (
         <>
           <Image
+<<<<<<< HEAD
             src="static/mail.png"
+=======
+            src="staticmail.png"
+>>>>>>> 545c7c8f6065678136c9c37bc60198f9972a4318
             alt="Mail-logo"
             height={100}
             width={100}
@@ -51,7 +59,11 @@ export const items: {
       Icon: (
         <>
           <Image
+<<<<<<< HEAD
             src="static/phone.png"
+=======
+            src="staticphone.png"
+>>>>>>> 545c7c8f6065678136c9c37bc60198f9972a4318
             alt="Phone-logo"
             height={100}
             width={100}
@@ -67,7 +79,11 @@ export const items: {
       Icon: (
         <>
           <Image
+<<<<<<< HEAD
             src="static/linkedin.png"
+=======
+            src="staticlinkedin.png"
+>>>>>>> 545c7c8f6065678136c9c37bc60198f9972a4318
             alt="Linkedin-logo"
             height={100}
             width={100}
@@ -83,7 +99,11 @@ export const items: {
       Icon: (
         <>
           <Image
+<<<<<<< HEAD
             src="static/GitHub.png"
+=======
+            src="staticGitHub.png"
+>>>>>>> 545c7c8f6065678136c9c37bc60198f9972a4318
             alt="Github-logo"
             height={100}
             width={100}
