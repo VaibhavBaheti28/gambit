@@ -10,7 +10,7 @@ const LockScreen = () => {
       <div css={screen}>
         <DateTime />
         <ResponsiveBlurImage
-          src="/gambit/static/M4Ever_Logo.jpg"
+          src="static/M4Ever_Logo.jpg"
           alt=""
           height={100}
           width={100}
