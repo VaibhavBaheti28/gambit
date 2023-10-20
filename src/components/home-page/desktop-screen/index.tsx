@@ -25,11 +25,7 @@ const DesktopScreen = () => {
       <nav css={navStyles}>
         <div>
           <Image
-<<<<<<< HEAD
             src="static/M4Ever_Logo.jpg"
-=======
-            src="staticM4Ever_Logo.jpg"
->>>>>>> 545c7c8f6065678136c9c37bc60198f9972a4318
             alt="M4Ever-logo"
             height={35}
             width={35}
