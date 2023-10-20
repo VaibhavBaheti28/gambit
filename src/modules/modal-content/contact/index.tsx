@@ -21,7 +21,7 @@ export const items: {
       Icon: (
         <>
           <Image
-            src="/static/Whatsapp.png"
+            src="staticWhatsapp.png"
             alt="Whatsapp-logo"
             height={100}
             width={100}
@@ -36,7 +36,7 @@ export const items: {
       Icon: (
         <>
           <Image
-            src="/static/mail.png"
+            src="staticmail.png"
             alt="Mail-logo"
             height={100}
             width={100}
@@ -51,7 +51,7 @@ export const items: {
       Icon: (
         <>
           <Image
-            src="/static/phone.png"
+            src="staticphone.png"
             alt="Phone-logo"
             height={100}
             width={100}
@@ -67,7 +67,7 @@ export const items: {
       Icon: (
         <>
           <Image
-            src="/static/linkedin.png"
+            src="staticlinkedin.png"
             alt="Linkedin-logo"
             height={100}
             width={100}
@@ -83,7 +83,7 @@ export const items: {
       Icon: (
         <>
           <Image
-            src="/static/GitHub.png"
+            src="staticGitHub.png"
             alt="Github-logo"
             height={100}
             width={100}
