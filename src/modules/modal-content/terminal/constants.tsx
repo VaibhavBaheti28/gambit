@@ -13,18 +13,18 @@ export const commands: {
 } = {
   command: {
     help: {
-      text: "about   skills   contact   projects",
+      text: "About   Skills   Contact   Projects",
     },
-    about: {
+    About: {
       modalComponent: <About />,
     },
-    skills: {
+    Skills: {
       modalComponent: <Skills />,
     },
-    contact: {
+    Contact: {
       modalComponent: <Contact />,
     },
-    projects: {
+    Projects: {
       modalComponent: <Projects />,
     },
   },
