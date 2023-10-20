@@ -52,7 +52,11 @@ const DesktopScreen = () => {
       <div css={bodyStyles}>
         <div>Vaibhav Baheti</div>
         <div>Logo</div>
-        <div>Random text</div>
+        <div>
+          Life is full of ups and downs, but it&apos;s the journey that makes it
+          worthwhile. We learn, we grow, and we appreciate the good moments even
+          more because of the challenges we face.
+        </div>
       </div>
     </>
   );

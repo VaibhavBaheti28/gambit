@@ -13,7 +13,7 @@ export const commands: {
 } = {
   command: {
     help: {
-      text: "About   Skills   Contact   Projects",
+      text: "About   Skills   Contact   Projects   clear",
     },
     About: {
       modalComponent: <About />,
