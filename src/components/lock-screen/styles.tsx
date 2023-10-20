@@ -17,7 +17,7 @@ export const background = css`
   position: absolute;
   width: 99.99%;
   height: 99.99%;
-  background-image: url("/static/hill.jpg");
+  background-image: url("/gambit/static/hill.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

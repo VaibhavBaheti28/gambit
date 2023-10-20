@@ -21,7 +21,7 @@ export const items: {
       Icon: (
         <>
           <Image
-            src="/static/Whatsapp.png"
+            src="/gambit/static/Whatsapp.png"
             alt="Whatsapp-logo"
             height={100}
             width={100}
@@ -36,7 +36,7 @@ export const items: {
       Icon: (
         <>
           <Image
-            src="/static/mail.png"
+            src="/gambit/static/mail.png"
             alt="Mail-logo"
             height={100}
             width={100}
@@ -51,7 +51,7 @@ export const items: {
       Icon: (
         <>
           <Image
-            src="/static/phone.png"
+            src="/gambit/static/phone.png"
             alt="Phone-logo"
             height={100}
             width={100}
@@ -67,7 +67,7 @@ export const items: {
       Icon: (
         <>
           <Image
-            src="/static/linkedin.png"
+            src="/gambit/static/linkedin.png"
             alt="Linkedin-logo"
             height={100}
             width={100}
@@ -83,7 +83,7 @@ export const items: {
       Icon: (
         <>
           <Image
-            src="/static/GitHub.png"
+            src="/gambit/static/GitHub.png"
             alt="Github-logo"
             height={100}
             width={100}
