@@ -25,7 +25,7 @@ const DesktopScreen = () => {
       <nav css={navStyles}>
         <div>
           <Image
-            src="static/M4Ever_Logo.jpg"
+            src="/static/M4Ever_Logo.jpg"
             alt="M4Ever-logo"
             height={35}
             width={35}
@@ -44,7 +44,10 @@ const DesktopScreen = () => {
         </div>
       </nav>
       <div style={configStyles}>
-        <div css={configContent}>
+        <div
+          css={configContent}
+          style={theme === "dark" ? { backgroundColor: "#4d3f2c" } : {}}
+        >
           <div
             style={{ justifySelf: "center" }}
             onClick={() => {
@@ -72,8 +75,17 @@ const DesktopScreen = () => {
           </div>
         </div>
       </div>
-      <div css={bodyStyles}>
-        <div style={{ flex: 1 }}>Vaibhav Baheti</div>
+      <div css={bodyStyles} style={theme === "light" ? { color: "black" } : {}}>
+        <div
+          style={{
+            display: "flex",
+            flex: 1,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          Vaibhav Baheti
+        </div>
         <div style={{ fontSize: "2vw", flex: 1 }}>
           Life is full of ups and downs, but it&apos;s the journey that makes it
           worthwhile. We learn, we grow, and we appreciate the good moments even

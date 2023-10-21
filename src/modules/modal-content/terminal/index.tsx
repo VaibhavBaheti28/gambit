@@ -71,7 +71,7 @@ export const Terminal = () => {
       return <Projects />;
     default:
       return (
-        <div>
+        <div style={theme === "light" ? {} : { border: "2px solid #3d3434" }}>
           <div
             css={navbar}
             style={theme === "dark" ? { backgroundColor: "#2b2626" } : {}}
@@ -94,6 +94,7 @@ export const Terminal = () => {
                 css={inputBox}
                 onChange={handleInputChange}
                 onKeyPress={handleInputKeyPress}
+                autoFocus
               />
             </div>
           </div>

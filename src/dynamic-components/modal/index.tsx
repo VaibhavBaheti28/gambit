@@ -5,7 +5,6 @@ import {
   modal,
   modalContent,
 } from "@/dynamic-components/modal/styles";
-import { useDispatch } from "react-redux";
 
 const Modal = ({
   show,
@@ -16,7 +15,6 @@ const Modal = ({
   onClose: () => void;
   children: React.ReactNode;
 }) => {
-  const dispatch = useDispatch();
   const modalStyles = {
     display: show ? "block" : "none",
   };

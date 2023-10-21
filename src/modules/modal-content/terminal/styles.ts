@@ -43,6 +43,7 @@ export const terminalContent = css`
 export const inputBox = css`
   all: initial;
   /* Optionally, set the display and border properties */
+  width: 100%;
   display: inline-block;
   color: red;
   caret-color: darkcyan;

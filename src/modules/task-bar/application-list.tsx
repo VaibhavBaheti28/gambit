@@ -11,7 +11,7 @@ export const applicationList: {
   data: {
     [key: string]: {
       displayName: string;
-      Icon: React.JSX.Element;
+      Icon?: React.JSX.Element;
       onClick?: string;
       modalComponent?: React.JSX.Element;
     };
@@ -21,7 +21,7 @@ export const applicationList: {
     Explorer: {
       displayName: "Explorer",
       Icon: <ExploreIcon />,
-      onClick: "",
+      onClick: "Explorer",
       modalComponent: <Explorer />,
     },
     resume: {
@@ -29,30 +29,28 @@ export const applicationList: {
       Icon: <DescriptionIcon />,
       onClick: "/resume",
     },
-    "contact-me": {
-      displayName: "contact-me",
+    contact: {
+      displayName: "contact",
       Icon: <PermContactCalendarIcon />,
-      onClick: "",
+      onClick: "contact",
       modalComponent: <Contact />,
     },
     terminal: {
       displayName: "terminal",
       Icon: <TerminalIcon />,
-      onClick: "",
+      onClick: "terminal",
       modalComponent: <Terminal />,
     },
-
     blog: {
       displayName: "blog",
       Icon: <BookIcon />,
       onClick:
         "https://medium.com/@vaibhavbaheti28/my-memorable-trip-to-agumbe-f9e75412c801",
     },
+
     def: {
       displayName: "def",
-      Icon: <AppsIcon />,
       onClick: "",
-      modalComponent: <>Error</>,
     },
   },
 };

@@ -11,6 +11,7 @@ import { RootState } from "@/store/reducers/reducers";
 const HomePage = () => {
   const [modalElement, setModalElement] = useState("def");
   const [showModal, setShowModal] = useState(false);
+
   const dispatch = useDispatch();
   const theme = useSelector((state: RootState) => state.myReducer.theme);
   const homeScreen = theme === "light" ? lightBackground : darkBackground;
@@ -25,7 +26,7 @@ const HomePage = () => {
             show={showModal}
             onClose={() => {
               setShowModal(false);
-              dispatch(updateString("Explorer"));
+              dispatch(updateString(""));
             }}
             aria-labelledby="modal-application"
             aria-describedby="modal-modal-description"
