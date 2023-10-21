@@ -8,16 +8,18 @@ import Modal from "@/dynamic-components/modal";
 import { useDispatch, useSelector } from "react-redux";
 import { updateString } from "@/store/mySlice";
 import { RootState } from "@/store/reducers/reducers";
-const HomePage = () => {
+import { css } from "@emotion/react";
+import { th } from "date-fns/locale";
+const HomePage = (props: any) => {
   const [modalElement, setModalElement] = useState("def");
   const [showModal, setShowModal] = useState(false);
 
   const dispatch = useDispatch();
   const theme = useSelector((state: RootState) => state.myReducer.theme);
-  const homeScreen = theme === "light" ? lightBackground : darkBackground;
+  console.log(theme);
   return (
     <>
-      <div css={homeScreen} />
+      <div />
       <section css={screen}>
         <div css={container}>
           <DesktopScreen />

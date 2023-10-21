@@ -11,6 +11,7 @@ import LockIcon from "@mui/icons-material/Lock";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/reducers/reducers";
 import { updateLock, updateTheme } from "@/store/mySlice";
+import { DARK_THEME, LIGHT_THEME } from "@/styles/themes";
 
 const DesktopScreen = () => {
   const [config, setConfig] = useState(false);
@@ -25,11 +26,7 @@ const DesktopScreen = () => {
       <nav css={navStyles}>
         <div>
           <Image
-<<<<<<< HEAD
-            src="static/M4Ever_Logo.jpg"
-=======
-            src="/staticM4Ever_Logo.jpg"
->>>>>>> 4a64f39331d9d9f0e7e0cb2be8b86467176c5af4
+            src="/static/M4Ever_Logo.jpg"
             alt="M4Ever-logo"
             height={35}
             width={35}
@@ -41,21 +38,15 @@ const DesktopScreen = () => {
           onClick={() => setConfig(!config)}
           style={config ? { backgroundColor: "opacity: '0.5'" } : {}}
         >
-          <TuneIcon
-            fontSize="large"
-            style={theme === "light" ? { color: "black" } : { color: "white" }}
-          />
+          <TuneIcon fontSize="large" />
         </div>
       </nav>
       <div style={configStyles}>
-        <div
-          css={configContent}
-          style={theme === "dark" ? { backgroundColor: "#4d3f2c" } : {}}
-        >
+        <div css={configContent}>
           <div
             style={{ justifySelf: "center" }}
             onClick={() => {
-              dispatch(updateTheme("light"));
+              dispatch(updateTheme(LIGHT_THEME));
             }}
           >
             <LightModeIcon fontSize="large" />
@@ -63,7 +54,7 @@ const DesktopScreen = () => {
           <div
             style={{ justifySelf: "center" }}
             onClick={() => {
-              dispatch(updateTheme("dark"));
+              dispatch(updateTheme(DARK_THEME));
             }}
           >
             <DarkModeIcon fontSize="large" />
@@ -79,7 +70,7 @@ const DesktopScreen = () => {
           </div>
         </div>
       </div>
-      <div css={bodyStyles} style={theme === "light" ? { color: "black" } : {}}>
+      <div css={bodyStyles}>
         <div
           style={{
             display: "flex",

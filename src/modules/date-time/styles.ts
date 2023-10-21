@@ -8,7 +8,7 @@ export const dateTime = css`
   filter: none;
   border-radius: 8px;
   height: 1vw;
-  background-color: grey;
+  background-color: #fbfbfb;
   opacity: 0.5;
   padding: 1rem;
   display: flex;

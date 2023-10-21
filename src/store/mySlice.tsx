@@ -1,15 +1,16 @@
+import { DARK_THEME, ITheme } from "@/styles/themes";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // Define the type of your state
 interface MyState {
   myString: string;
-  theme: string;
+  theme: ITheme;
   isLocked: boolean;
 }
 
 const initialState: MyState = {
   myString: "Explorer",
-  theme: "dark",
+  theme: DARK_THEME,
   isLocked: true,
 };
 
@@ -20,7 +21,7 @@ const mySlice = createSlice({
     updateString: (state, action: PayloadAction<string>) => {
       state.myString = action.payload;
     },
-    updateTheme: (state, action: PayloadAction<string>) => {
+    updateTheme: (state, action: PayloadAction<ITheme>) => {
       state.theme = action.payload;
     },
     updateLock: (state, action: PayloadAction<boolean>) => {

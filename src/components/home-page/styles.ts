@@ -26,6 +26,7 @@ export const navStyles = css`
   justify-content: space-between;
   align-items: center;
   gap: 5rem;
+  color: #1a1a1a;
   span {
     font-size: 1vw;
   }

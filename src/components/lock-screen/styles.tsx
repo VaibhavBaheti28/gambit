@@ -17,11 +17,7 @@ export const lightBackground = css`
   position: absolute;
   width: 99.99%;
   height: 99.99%;
-<<<<<<< HEAD
-  background-image: url("static/hill.jpg");
-=======
-  background-image: url("/statichill.jpg");
->>>>>>> 4a64f39331d9d9f0e7e0cb2be8b86467176c5af4
+  background-image: url("/static/hill.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -29,22 +25,24 @@ export const lightBackground = css`
   z-index: 1;
 `;
 
-export const darkBackground = css`
-  position: absolute;
-  width: 99.99%;
-  height: 99.99%;
-<<<<<<< HEAD
-  background-image: url("static/dark.jpg");
-=======
-  background-image: url("/staticdark.jpg");
->>>>>>> 4a64f39331d9d9f0e7e0cb2be8b86467176c5af4
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  z-index: 1;
-  color: white;
-`;
+// export const darkBackground = css`
+//   position: absolute;
+//   width: 99.99%;
+//   height: 99.99%;
+//   background-image: url("/static/dark.jpg");
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   z-index: 1;
+//   color: white;
+// `;
+export const darkBackground = () => {
+  return (theme: any) => css`
+    background-color: ${theme.color.background};
+    color: ${theme.color.text};
+  `;
+};
 
 export const navStyles = css`
   font-size: 2vw;
@@ -53,7 +51,7 @@ export const navStyles = css`
   filter: none;
   border-radius: 8px;
   margin-top: 6vw;
-  background-color: grey;
+  background-color: #fbfbfb;
   opacity: 0.5;
   padding: 1rem;
   display: flex;

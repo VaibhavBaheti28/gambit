@@ -11,23 +11,17 @@ import {
 import { DateTime } from "@/modules/date-time";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/reducers/reducers";
-const LockScreen = () => {
+import { css, useTheme } from "@emotion/react";
+const LockScreen = (props: any) => {
   const theme = useSelector((state: RootState) => state.myReducer.theme);
-  const homeScreen = theme === "light" ? lightBackground : darkBackground;
+  console.log(theme);
   return (
     <>
-      <div css={homeScreen} />
-      <div
-        css={screen}
-        style={theme === "light" ? { color: "black" } : { color: "white" }}
-      >
+      <div css={darkBackground()(theme)} />
+      <div css={screen}>
         <DateTime />
         <ResponsiveBlurImage
-<<<<<<< HEAD
-          src="static/M4Ever_Logo.jpg"
-=======
-          src="/staticM4Ever_Logo.jpg"
->>>>>>> 4a64f39331d9d9f0e7e0cb2be8b86467176c5af4
+          src="/static/M4Ever_Logo.jpg"
           alt=""
           height={100}
           width={100}
