@@ -17,7 +17,7 @@ export const lightBackground = css`
   position: absolute;
   width: 99.99%;
   height: 99.99%;
-  background-image: url("/static/hill.jpg");
+  background-image: url("static/hill.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -29,7 +29,7 @@ export const darkBackground = css`
   position: absolute;
   width: 99.99%;
   height: 99.99%;
-  background-image: url("/static/dark.jpg");
+  background-image: url("static/dark.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
