@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
 import Sidebar from "../sidebar";
-import { aboutContainer, container, whoami } from "./styles";
+import { aboutContainer, whoami } from "./styles";
 import { RootState } from "@/store/reducers/reducers";
+import { container } from "../styles";
 
 export const About = () => {
   const theme = useSelector((state: RootState) => state.myReducer.theme);

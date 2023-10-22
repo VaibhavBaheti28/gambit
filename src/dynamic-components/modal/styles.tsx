@@ -22,13 +22,13 @@ export const modal = css`
   top: 5vw;
   overflow: hidden;
   animation: ${borderAnimation} 1s ease-in-out forwards;
-
   border-bottom: 1px solid black;
 `;
 
 /* Modal content */
 export const modalContent = css`
   height: 100%;
+  width: 100%;
 `;
 
 /* Close button */

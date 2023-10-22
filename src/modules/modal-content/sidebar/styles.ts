@@ -1,9 +1,7 @@
 import { css } from "@emotion/react";
 
 export const sidebar = css`
-  width: 20%;
   padding: 0;
-  height: 33vw;
   position: sticky;
   background-color: slategray;
   border-left: 3px solid black;
@@ -12,26 +10,24 @@ export const sidebar = css`
   border-right: 4px solid black;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: baseline;
 
-  p {
+  width: fit-content;
+  div {
     padding: 0;
     border: 0;
     margin: 0;
     font-size: 3vw;
-    padding: 1vw;
+    padding: 1vw 0;
+    width: 100%;
   }
-  p:hover {
+  div:hover {
     cursor: pointer;
-    font-size: 3.1vw;
+    background-color: darkgray;
   }
 `;
 
 export const explore = css`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-bottom: 3px solid black;
   svg {
     width: 2vw;

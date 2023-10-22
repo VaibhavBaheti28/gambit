@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { search, screen, app, appContainer } from "./styles";
 import { searchText } from "./modules/search";
 import Image from "next/image";

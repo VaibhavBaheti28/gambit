@@ -1,197 +1,62 @@
 import { css } from "@emotion/react";
+import { container } from "../styles";
 
 export const navbar = css`
   height: 2vw;
-  position: fixed;
-  width: 79%;
+  position: sticky;
+  width: 100%;
   background-color: #8f8d8d;
   z-index: 5;
   font-size: 1.5vw;
   padding-left: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fafafafa;
+  
 `;
-export const container = css`
+export const terminalContainer = css`
+  ${container};
+  >p,div,h3{
+    line-height: 10px;
+    font-size: 20px;  
+    display: flex;
+    align-items: center;
+    word-break: break-all;
+    flex-wrap: wrap;
+    margin:0.25rem;
+    padding-top: 0.5rem;
+  }
+
   background-color: black;
   color: green;
+  /* position: relative; */
+
   scroll-behavior: smooth;
-  padding: 0;
-  padding-left: 1vw;
-  padding-top: 20px;
-  min-height: 32vw;
-  max-height: 32vw;
-  overflow: auto;
-  padding-top: 2.5vw;
-  p {
-    line-height: 15px;
-    font-size: 20px;
-    margin: 0;
-    margin-bottom: 10px;
-  }
-  h3 {
-    font-size: 20px;
-  }
-  div {
-    height: 10px;
-    margin-top: 0;
-    padding-top: 0;
-    font-size: 20px;
-    padding-bottom: 10px;
-  }
+  padding:0 1vw;
+  height: 100%;
+  overflow-y: auto;
 `;
+
 export const terminalContent = css`
   display: flex;
   align-items: center;
+  padding-top: 0.5rem;
 `;
 export const inputBox = css`
   all: initial;
-  /* Optionally, set the display and border properties */
   width: 100%;
-  display: inline-block;
-  color: red;
+  flex:1;
+  color: blue;
   caret-color: darkcyan;
   animation: type 0.5s 1s steps(20, end);
-  @keyframes type {
-    0% {
-      width: 0;
-    }
-    99.9% {
-      border-right: 0.15em solid orange;
-    }
-    100% {
-      border: none;
-    }
-  }
+  line-height: 10px;
+  font-size: 20px;  
+  padding-left:0.5rem;
+  padding-top: 0.5rem;
 `;
 
-export const cssTyping = css`
-  p {
-    border-right: 0.15em solid orange;
-    font-family: "Courier";
-    font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-  p:nth-child(1) {
-    width: 7.3em;
-    -webkit-animation: type 2s steps(40, end);
-    animation: type 2s steps(40, end);
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-  }
 
-  p:nth-child(2) {
-    width: 11.5em;
-    opacity: 0;
-    -webkit-animation: type2 2s steps(40, end);
-    animation: type2 2s steps(40, end);
-    -webkit-animation-delay: 2s;
-    animation-delay: 2s;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-  }
-
-  p:nth-child(3) {
-    width: 7.3em;
-    opacity: 0;
-    -webkit-animation:
-      type3 5s steps(20, end),
-      blink 0.5s step-end infinite alternate;
-    animation:
-      type3 5s steps(20, end),
-      blink 0.5s step-end infinite alternate;
-    -webkit-animation-delay: 4s;
-    animation-delay: 4s;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-  }
-
-  @keyframes type {
-    0% {
-      width: 0;
-    }
-    99.9% {
-      border-right: 0.15em solid orange;
-    }
-    100% {
-      border: none;
-    }
-  }
-
-  @-webkit-keyframes type {
-    0% {
-      width: 0;
-    }
-    99.9% {
-      border-right: 0.15em solid orange;
-    }
-    100% {
-      border: none;
-    }
-  }
-
-  @keyframes type2 {
-    0% {
-      width: 0;
-    }
-    1% {
-      opacity: 1;
-    }
-    99.9% {
-      border-right: 0.15em solid orange;
-    }
-    100% {
-      opacity: 1;
-      border: none;
-    }
-  }
-
-  @-webkit-keyframes type2 {
-    0% {
-      width: 0;
-    }
-    1% {
-      opacity: 1;
-    }
-    99.9% {
-      border-right: 0.15em solid orange;
-    }
-    100% {
-      opacity: 1;
-      border: none;
-    }
-  }
-
-  @keyframes type3 {
-    0% {
-      width: 0;
-    }
-    1% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-webkit-keyframes type3 {
-    0% {
-      width: 0;
-    }
-    1% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes blink {
-    50% {
-      border-color: transparent;
-    }
-  }
-  @-webkit-keyframes blink {
-    50% {
-      border-color: tranparent;
-    }
-  }
-`;
+export const widow=css`
+  position: relative;
+`
