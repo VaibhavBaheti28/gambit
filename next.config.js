@@ -4,7 +4,6 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     path: process.env.NODE_ENV === "production" ? "/" : "",
-    URL: process.env.NODE_ENV === "production" ? "/" : "",
   },
 };
 
