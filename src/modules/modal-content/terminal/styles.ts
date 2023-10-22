@@ -19,7 +19,7 @@ export const container = css`
   min-height: 32vw;
   max-height: 32vw;
   overflow: auto;
-  padding-top: 3vw;
+  padding-top: 2.5vw;
   p {
     line-height: 15px;
     font-size: 20px;
@@ -34,6 +34,7 @@ export const container = css`
     margin-top: 0;
     padding-top: 0;
     font-size: 20px;
+    padding-bottom: 10px;
   }
 `;
 export const terminalContent = css`
@@ -47,6 +48,18 @@ export const inputBox = css`
   display: inline-block;
   color: red;
   caret-color: darkcyan;
+  animation: type 0.5s 1s steps(20, end);
+  @keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: 0.15em solid orange;
+    }
+    100% {
+      border: none;
+    }
+  }
 `;
 
 export const cssTyping = css`

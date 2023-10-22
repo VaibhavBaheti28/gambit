@@ -27,19 +27,19 @@ export const Terminal = () => {
       if (commands.command[input].text)
         return setOutput([
           ...output,
-          `Monarch4Ever: ${input}`,
+          `$Monarch4Ever: ${input}`,
           commands.command[input].text || "",
         ]);
       else if (commands.command[input].modalComponent) {
         console.log(commands.command[input]);
         dispatch(updateString(input));
 
-        return setOutput([...output, `Monarch4Ever: ${input}`, input]);
+        return setOutput([...output, `$Monarch4Ever: ${input}`, input]);
       } else {
         return setOutput([""]);
       }
     }
-    setOutput([...output, `Monarch4Ever: ${input}`, "Command not Found"]);
+    setOutput([...output, `$Monarch4Ever: ${input}`, "Command not Found"]);
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -87,7 +87,7 @@ export const Terminal = () => {
               return <p key={key}>{line}</p>;
             })}
             <div css={terminalContent}>
-              <h3>Monarch4Ever: </h3>
+              <h3>$Monarch4Ever: </h3>
               <input
                 type="text"
                 value={input}
