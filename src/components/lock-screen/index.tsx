@@ -10,6 +10,7 @@ import {
 import { DateTime } from "@/modules/date-time";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/reducers/reducers";
+import Image from "next/image";
 const LockScreen = () => {
   const theme = useSelector((state: RootState) => state.myReducer.theme);
   const homeScreen = theme === "light" ? lightBackground : darkBackground;
@@ -21,14 +22,11 @@ const LockScreen = () => {
         style={theme === "light" ? { color: "black" } : { color: "white" }}
       >
         <DateTime />
-        <ResponsiveBlurImage
+        <Image
           src="static/M4Ever_Logo.jpg"
-          alt=""
+          alt="M4Ever-Logo"
           height={100}
           width={100}
-          imageDimensionType="LOGO_SQUARE"
-          imageByPixelDensity
-          styles={logo}
         />
         Vaibhav Baheti
         <section style={{ fontSize: "2vw", fontFamily: "Georgia" }}>
