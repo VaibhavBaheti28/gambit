@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { inputBox, navbar, terminalContent } from "./styles";
+import { inputBox, navbar, terminalContainer, terminalContent } from "./styles";
 import { commands } from "./constants";
 import { useDispatch, useSelector } from "react-redux";
 import { updateString } from "@/store/mySlice";
@@ -22,7 +22,7 @@ export const Terminal = () => {
       if (commands.command[input].text)
         return setOutput([
           ...output,
-          `<h3>Monarch@4Ever:~/$</h3><p>${input}</p>`,
+          `<h3>Monarch@4Ever:~/$</h3><p>&nbsp;${input}</p>`,
           commands.command[input].text || "",
         ]);
       else if (commands.command[input].modalComponent) {
@@ -31,7 +31,7 @@ export const Terminal = () => {
 
         return setOutput([
           ...output,
-          `<h3>Monarch@4Ever:~/$</h3><p>${input}</p>`,
+          `<h3>Monarch@4Ever:~/$</h3><p>&nbsp;${input}</p>`,
           input,
         ]);
       } else {
@@ -40,7 +40,7 @@ export const Terminal = () => {
     }
     setOutput([
       ...output,
-      `<h3>Monarch@4Ever:~/$</h3><p>${input}</p>`,
+      `<h3>Monarch@4Ever:~/$</h3><p>&nbsp;${input}</p>`,
       "<p>Command not found!</p>",
     ]);
   };
@@ -82,7 +82,7 @@ export const Terminal = () => {
       return <Explorer />;
     default:
       return (
-        <div style={theme === "light" ? {} : { border: "2px solid #3d3434" }}>
+        <div css={terminalContent}>
           <div
             css={navbar}
             style={theme === "dark" ? { backgroundColor: "#2b2626" } : {}}
@@ -91,7 +91,7 @@ export const Terminal = () => {
           </div>
           <div
             id="terminalContent"
-            css={terminalContent}
+            css={terminalContainer}
             style={theme === "dark" ? { backgroundColor: "antiquewhite" } : {}}
             onClick={() => document.getElementById("input")?.focus()}
           >
@@ -100,7 +100,7 @@ export const Terminal = () => {
                 <div key={key} dangerouslySetInnerHTML={{ __html: line }} />
               );
             })}
-            <div css={terminalContent}>
+            <div>
               <h3>Monarch@4Ever:~/$ </h3>
               <input
                 id="input"
