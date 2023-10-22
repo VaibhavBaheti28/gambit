@@ -1,5 +1,4 @@
 import ResponsiveBlurImage from "@/modules/responsive-image";
-import React from "react";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import {
   darkBackground,
@@ -23,7 +22,7 @@ const LockScreen = () => {
       >
         <DateTime />
         <ResponsiveBlurImage
-          src="static/M4Ever_Logo.jpg"
+          src="/static/M4Ever_Logo.jpg"
           alt=""
           height={100}
           width={100}

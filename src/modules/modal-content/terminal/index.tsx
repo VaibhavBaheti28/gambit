@@ -1,11 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  container,
-  cssTyping,
-  inputBox,
-  navbar,
-  terminalContent,
-} from "./styles";
+import { inputBox, navbar, terminalContainer, terminalContent } from "./styles";
 import { commands } from "./constants";
 import { useDispatch, useSelector } from "react-redux";
 import { updateString } from "@/store/mySlice";
@@ -14,6 +8,7 @@ import About from "../about";
 import Skills from "../skills";
 import ExplorerContact from "../explorerContact";
 import Projects from "../projects";
+import { Explorer } from "../explorer";
 
 export const Terminal = () => {
   const [input, setInput] = useState<string>("");
@@ -27,19 +22,27 @@ export const Terminal = () => {
       if (commands.command[input].text)
         return setOutput([
           ...output,
-          `Monarch4Ever: ${input}`,
+          `<h3>Monarch@4Ever:~/$</h3><p>&nbsp;${input}</p>`,
           commands.command[input].text || "",
         ]);
       else if (commands.command[input].modalComponent) {
         console.log(commands.command[input]);
         dispatch(updateString(input));
 
-        return setOutput([...output, `Monarch4Ever: ${input}`, input]);
+        return setOutput([
+          ...output,
+          `<h3>Monarch@4Ever:~/$</h3><p>&nbsp;${input}</p>`,
+          input,
+        ]);
       } else {
         return setOutput([""]);
       }
     }
-    setOutput([...output, `Monarch4Ever: ${input}`, "Command not Found"]);
+    setOutput([
+      ...output,
+      `<h3>Monarch@4Ever:~/$</h3><p>&nbsp;${input}</p>`,
+      "<p>Command not found!</p>",
+    ]);
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -60,6 +63,12 @@ export const Terminal = () => {
   useEffect(() => {
     if (scrollableDiv) scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
   }, [output, scrollableDiv]);
+
+  useEffect(() => {
+    var input = document.getElementById("input");
+    input?.focus();
+  }, [myString]);
+
   switch (myString) {
     case "About":
       return <About />;
@@ -69,9 +78,11 @@ export const Terminal = () => {
       return <ExplorerContact />;
     case "Projects":
       return <Projects />;
+    case "Explorer":
+      return <Explorer />;
     default:
       return (
-        <div style={theme === "light" ? {} : { border: "2px solid #3d3434" }}>
+        <div css={terminalContent}>
           <div
             css={navbar}
             style={theme === "dark" ? { backgroundColor: "#2b2626" } : {}}
@@ -80,15 +91,19 @@ export const Terminal = () => {
           </div>
           <div
             id="terminalContent"
-            css={container}
+            css={terminalContainer}
             style={theme === "dark" ? { backgroundColor: "antiquewhite" } : {}}
+            onClick={() => document.getElementById("input")?.focus()}
           >
             {output.map((line: string, key: number) => {
-              return <p key={key}>{line}</p>;
+              return (
+                <div key={key} dangerouslySetInnerHTML={{ __html: line }} />
+              );
             })}
-            <div css={terminalContent}>
-              <h3>Monarch4Ever: </h3>
+            <div>
+              <h3>Monarch@4Ever:~/$ </h3>
               <input
+                id="input"
                 type="text"
                 value={input}
                 css={inputBox}

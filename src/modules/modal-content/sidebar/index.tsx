@@ -5,8 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateString } from "@/store/mySlice";
 import { RootState } from "@/store/reducers/reducers";
 export const Sidebar = () => {
-  const myString = useSelector((state: RootState) => state.myReducer.myString);
-
   const dispatch = useDispatch();
   return (
     <div css={sidebar}>
@@ -17,38 +15,36 @@ export const Sidebar = () => {
         }}
       >
         <ExploreIcon />
-        <p>Explorer</p>
+        Explorer
       </div>
       <div
         onClick={() => {
           dispatch(updateString("About"));
         }}
       >
-        <p>About Me</p>
+        About Me
       </div>
       <div
         onClick={() => {
           dispatch(updateString("Projects"));
         }}
       >
-        <p>Projects</p>
+        Projects
       </div>
       <div
         onClick={() => {
           dispatch(updateString("Skills"));
         }}
       >
-        <p>Skills</p>
+        Skills
       </div>
-      <div>
-        <p>Certifications</p>
-      </div>
+      <div>Certifications</div>
       <div
         onClick={() => {
           dispatch(updateString("Contact"));
         }}
       >
-        <p>Contact</p>
+        Contact
       </div>
     </div>
   );

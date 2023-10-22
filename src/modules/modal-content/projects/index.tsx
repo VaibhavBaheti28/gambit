@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
 import Sidebar from "../sidebar";
-import { projectContainer, container } from "./styles";
+import { projectContainer } from "./styles";
 import { url } from "inspector";
 import { RootState } from "@/store/reducers/reducers";
+import { container } from "../styles";
 
 interface Project {
   id: number;
