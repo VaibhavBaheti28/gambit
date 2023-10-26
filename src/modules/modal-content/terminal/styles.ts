@@ -7,7 +7,7 @@ export const navbar = css`
   width: 100%;
   background-color: #8f8d8d;
   z-index: 5;
-  font-size: 1.5vw;
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,7 +20,7 @@ export const terminalContainer = css`
   div,
   h3 {
     line-height: 10px;
-    font-size: 20px;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     word-break: break-all;

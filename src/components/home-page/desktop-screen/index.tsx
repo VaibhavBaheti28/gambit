@@ -82,11 +82,12 @@ const DesktopScreen = () => {
             flex: 1,
             alignItems: "center",
             justifyContent: "center",
+            fontSize: "50px",
           }}
         >
           Vaibhav Baheti
         </div>
-        <div style={{ fontSize: "2vw", flex: 1 }}>
+        <div style={{ fontSize: "20px", flex: 1 }}>
           Life is full of ups and downs, but it&apos;s the journey that makes it
           worthwhile. We learn, we grow, and we appreciate the good moments even
           more because of the challenges we face.

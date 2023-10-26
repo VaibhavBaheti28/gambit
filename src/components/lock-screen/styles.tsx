@@ -9,7 +9,7 @@ export const screen = css`
   align-items: center;
   z-index: 1;
   gap: 1rem;
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: Garamond;
 `;
 

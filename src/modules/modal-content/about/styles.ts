@@ -10,9 +10,19 @@ export const aboutContainer = css`
 
     margin: 0;
     font-size: 3vw;
+    ${typeof window !== "undefined"
+      ? window.innerWidth <= 500
+        ? { fontSize: "3rem" }
+        : {}
+      : {}}
   }
   p {
     font-size: 2vw;
+    ${typeof window !== "undefined"
+      ? window.innerWidth <= 500
+        ? { fontSize: "1rem" }
+        : {}
+      : {}}
   }
 `;
 

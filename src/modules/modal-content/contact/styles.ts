@@ -36,14 +36,23 @@ export const search = css`
 export const appContainer = css`
   display: flex;
   flex-direction: row;
+  flex: wrap;
   width: 100%;
   justify-content: space-around;
   align-items: center;
+  ${typeof window !== "undefined"
+    ? window.innerWidth <= 500
+      ? { flexWrap: "wrap" }
+      : {}
+    : {}}
 `;
 
 export const app = css`
-  min-width: 100px;
-  min-height: 100px;
+  ${typeof window !== "undefined"
+    ? window.innerWidth <= 500
+      ? { height: 90, width: 90, padding: "1rem" }
+      : { height: 100, width: 100 }
+    : {}}
   border-radius: 2rem;
   color: black;
   background: transparent;

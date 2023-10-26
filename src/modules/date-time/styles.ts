@@ -17,6 +17,11 @@ export const dateTime = css`
   align-items: center;
   justify-content: center;
   gap: 5rem;
+  ${typeof window !== "undefined"
+    ? window.innerWidth <= 500
+      ? { display: "none" }
+      : {}
+    : {}}
   span {
     font-size: 1vw;
   }

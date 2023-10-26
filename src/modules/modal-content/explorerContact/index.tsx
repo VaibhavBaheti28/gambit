@@ -12,8 +12,8 @@ export const ExplorerContact = () => {
       css={container}
       style={
         theme === "light"
-          ? { borderTop: "2vw solid black" }
-          : { borderTop: "2vw solid #455361", borderLeft: "2px solid #455361" }
+          ? { borderTop: "2rem solid black" }
+          : { borderTop: "2rem solid #455361" }
       }
     >
       <Sidebar />

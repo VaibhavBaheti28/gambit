@@ -4,11 +4,16 @@ export const screen = css`
   display: grid;
   padding: 2vw;
   overflow: hidden;
-
   height: 100%;
-  grid-template-columns: [f] 30% [s] 40% [t] 30% [end];
-  grid-template-rows: [f] 15vw [s] 15vw [end];
+  ${typeof window !== "undefined"
+    ? window.innerWidth <= 500
+      ? { fontSize: "1.5rem" }
+      : {}
+    : {}}
+  grid-template-columns: [f] 33.33% [s] 33.34% [t] 33.33% [end];
+  grid-template-rows: [f] 50% [s] 50% [end];
   background-image: linear-gradient(to bottom, cyan, orange);
+
   div:hover {
     cursor: pointer;
     color: blanchedalmond;

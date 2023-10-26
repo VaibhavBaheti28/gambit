@@ -18,6 +18,11 @@ export const sidebar = css`
     border: 0;
     margin: 0;
     font-size: 3vw;
+    ${typeof window !== "undefined"
+      ? window.innerWidth <= 500
+        ? { fontSize: "1.5rem" }
+        : {}
+      : {}}
     padding: 1vw 0;
     width: 100%;
   }

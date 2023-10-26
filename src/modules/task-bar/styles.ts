@@ -3,9 +3,8 @@ import { css } from "@emotion/react";
 export const taskBarContainer = css`
   position: fixed;
   display: flex;
-  z-index: 101;
   justify-content: space-evenly;
-  bottom: 2vw;
+  bottom: 1rem;
   padding: 1rem 0 0 0;
   gap: 2rem;
   /* opacity: 1; */
