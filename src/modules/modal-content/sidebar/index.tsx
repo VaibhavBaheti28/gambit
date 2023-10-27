@@ -10,11 +10,15 @@ export const Sidebar = () => {
     <div css={sidebar}>
       <div
         css={explore}
+        style={{
+          borderBottom: "3px solid black",
+          borderTop: "1px solid black",
+        }}
         onClick={() => {
           dispatch(updateString("Explorer"));
         }}
       >
-        <ExploreIcon />
+        <ExploreIcon fontSize="large" />
         Explorer
       </div>
       <div

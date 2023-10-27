@@ -27,8 +27,8 @@ export const Explorer = () => {
           css={screen}
           style={
             theme === "light"
-              ? { borderTop: "2vw solid black" }
-              : { borderTop: "2vw solid #455361" }
+              ? { borderTop: "2rem solid black" }
+              : { borderTop: "2rem solid #455361" }
           }
         >
           <div

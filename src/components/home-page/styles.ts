@@ -34,10 +34,11 @@ export const navStyles = css`
 export const bodyStyles = css`
   display: flex;
   width: 100%;
-  justify-content: space-around;
-  height: 35vw;
+  height: 30rem;
+  justify-content: center;
   align-items: center;
   color: white;
+  margin-left: 1rem;
 `;
 export const taskBarStyles = css`
   display: flex;

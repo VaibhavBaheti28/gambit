@@ -28,8 +28,8 @@ const LockScreen = () => {
           height={100}
           width={100}
         />
-        Vaibhav Baheti
-        <section style={{ fontSize: "2vw", fontFamily: "Georgia" }}>
+        <div>Vaibhav Baheti</div>
+        <section style={{ fontSize: "2rem", fontFamily: "Georgia" }}>
           Unlock Device {<ArrowDropUpIcon style={{ fontSize: "2vw" }} />}
         </section>
       </div>

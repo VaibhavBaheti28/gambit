@@ -6,9 +6,4 @@ export const contactContainer = css`
   flex-direction: column;
   align-items: center;
   background-image: linear-gradient(to bottom right, black, grey);
-  .css-kifl40-Contact {
-    border-radius: 0;
-    min-height: 0;
-    height: 32vw;
-  }
 `;
