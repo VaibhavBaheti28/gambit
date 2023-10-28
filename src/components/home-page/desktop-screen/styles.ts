@@ -15,3 +15,11 @@ export const configContent = css`
   grid-template-rows: [f] 4rem [s] 4rem [end];
   align-items: center;
 `;
+
+export const name = css`
+  width: 40%;
+  display: "flex";
+  align-items: "center";
+  justify-content: "center";
+  font-size: "50px";
+`;

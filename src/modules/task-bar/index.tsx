@@ -49,6 +49,10 @@ const TaskBar = ({
           return (
             <div key={displayName} onClick={handleOnClick} css={shortcutIcon}>
               {Icon}
+              <span>
+                {displayName.charAt(0).toUpperCase() + displayName.slice(1)}
+              </span>{" "}
+              {/* Display displayName below the icon */}
             </div>
           );
       })}

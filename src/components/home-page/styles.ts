@@ -15,14 +15,19 @@ export const screen = css`
 
 export const navStyles = css`
   min-height: 25px;
-  width: fit-content;
+  width: 65%;
   padding: 1 rem;
   font-size: 2vw;
   font-family: Verdana;
   filter: none;
   display: flex;
+  justify-content: space-between;
   margin-top: 0.5vw;
   align-items: center;
+  @media screen and (max-width: 600px) {
+    font-size: 10px;
+    width: 98%;
+  }
   span {
     font-size: 1vw;
     @media screen and (max-width: 600px) {
@@ -33,9 +38,9 @@ export const navStyles = css`
 
 export const bodyStyles = css`
   display: flex;
-  width: 100%;
+  width: 80%;
   height: 30rem;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   color: white;
   margin-left: 1rem;

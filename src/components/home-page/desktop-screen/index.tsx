@@ -3,7 +3,7 @@ import Image from "next/image";
 import TuneIcon from "@mui/icons-material/Tune";
 import { DateTime } from "@/modules/date-time";
 import { useState } from "react";
-import { configContent } from "./styles";
+import { configContent, name } from "./styles";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import HelpIcon from "@mui/icons-material/Help";
@@ -76,18 +76,8 @@ const DesktopScreen = () => {
         </div>
       </div>
       <div css={bodyStyles} style={theme === "light" ? { color: "black" } : {}}>
-        <div
-          style={{
-            display: "flex",
-            flex: 1,
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "50px",
-          }}
-        >
-          Vaibhav Baheti
-        </div>
-        <div style={{ fontSize: "20px", flex: 1 }}>
+        <div css={name}>Vaibhav Baheti</div>
+        <div style={{ fontSize: "20px", width: "40%" }}>
           Life is full of ups and downs, but it&apos;s the journey that makes it
           worthwhile. We learn, we grow, and we appreciate the good moments even
           more because of the challenges we face.

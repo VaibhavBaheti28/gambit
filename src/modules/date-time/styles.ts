@@ -14,8 +14,10 @@ export const dateTime = css`
   display: flex;
   margin-top: 0.5vw;
   align-items: center;
-  justify-content: center;
   gap: 5rem;
+  @media screen and (max-width: 600px) {
+    gap: 1rem;
+  }
   span {
     font-size: 1vw;
     @media screen and (max-width: 600px) {

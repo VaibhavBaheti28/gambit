@@ -1,4 +1,11 @@
-import { about, blog, certificate, contact, projects, screen } from "./styles";
+import {
+  about,
+  skills,
+  certificate,
+  contact,
+  projects,
+  screen,
+} from "./styles";
 import About from "../about";
 import { useSelector, useDispatch } from "react-redux";
 import { updateString } from "@/store/mySlice";
@@ -56,7 +63,7 @@ export const Explorer = () => {
             Certificates
           </div>
           <div
-            css={blog}
+            css={skills}
             onClick={() => {
               dispatch(updateString("Skills"));
             }}

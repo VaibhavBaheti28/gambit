@@ -17,7 +17,7 @@ export const items: {
 } = {
   data: {
     Whatsapp: {
-      displayName: "whatsapp",
+      displayName: "Whatsapp",
       Icon: (
         <>
           <Image
@@ -32,7 +32,7 @@ export const items: {
       onClick: "",
     },
     Email: {
-      displayName: "email",
+      displayName: "Email",
       Icon: (
         <>
           <Image
@@ -47,7 +47,7 @@ export const items: {
       onClick: "",
     },
     phone: {
-      displayName: "phone",
+      displayName: "Phone",
       Icon: (
         <>
           <Image
@@ -63,7 +63,7 @@ export const items: {
     },
 
     Linkedin: {
-      displayName: "linkedin",
+      displayName: "Linkedin",
       Icon: (
         <>
           <Image
@@ -79,7 +79,7 @@ export const items: {
       slug: "https://www.linkedin.com/in/vaibhav-baheti-28-m4ever/",
     },
     Github: {
-      displayName: "github",
+      displayName: "Github",
       Icon: (
         <>
           <Image
@@ -97,7 +97,7 @@ export const items: {
   },
 };
 
-const itemNames = ["whatsapp", "email", "phone", "linkedin", "github"];
+const itemNames = ["Whatsapp", "Email", "Phone", "Linkedin", "Github"];
 
 export const Contact = () => {
   const [inputValue, setInputValue] = useState<string>("");
@@ -133,7 +133,7 @@ export const Contact = () => {
           const handleOnClick = () => {
             if (slug) router.push(slug);
           };
-          if (searchText(displayName, inputValue))
+          if (searchText(displayName.toLowerCase(), inputValue.toLowerCase()))
             return (
               <div key={displayName} onClick={handleOnClick}>
                 {Icon}
