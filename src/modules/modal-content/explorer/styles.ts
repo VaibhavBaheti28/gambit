@@ -5,11 +5,9 @@ export const screen = css`
   padding: 2vw;
   overflow: hidden;
   height: 100%;
-  ${typeof window !== "undefined"
-    ? window.innerWidth <= 500
-      ? { fontSize: "1.5rem" }
-      : {}
-    : {}}
+  @media screen and (max-width: 600px) {
+    font-size: 20px;
+  }
   grid-template-columns: [f] 33.33% [s] 33.34% [t] 33.33% [end];
   grid-template-rows: [f] 50% [s] 50% [end];
   background-image: linear-gradient(to bottom, cyan, orange);

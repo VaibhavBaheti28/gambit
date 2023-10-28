@@ -1,30 +1,29 @@
 import { css } from "@emotion/react";
 import { container } from "../styles";
 
-export const navbar = css`
-  height: 2vw;
-  position: sticky;
-  width: 100%;
-  background-color: #8f8d8d;
-  z-index: 5;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fafafafa;
-`;
-export const terminalContainer = css`
+export const terminalContent = css`
   ${container};
   flex-direction: column;
-  > p,
   div,
   h3 {
-    line-height: 10px;
-    font-size: 1rem;
+    line-height: 15px;
+    font-size: 20px;
+    display: flex;
+    align-items: baseline;
+    @media screen and (max-width: 600) {
+      font-size: 10px;
+    }
+  }
+  p {
+    line-height: 15px;
+    font-size: 20px;
     display: flex;
     align-items: center;
+    padding-left: 5px;
+    @media screen and (max-width: 600) {
+      font-size: 10px;
+    }
     word-break: break-all;
-    padding-top: 0.5rem;
   }
   border: 0;
 
@@ -36,27 +35,43 @@ export const terminalContainer = css`
   overflow: auto;
 `;
 
-export const terminalContent = css`
+export const terminalContainer = css`
   display: flex;
   flex-direction: column;
   padding-top: 0.5rem;
   padding: 0 1vw;
   width: 100%;
   margin: 0;
-  p,
   div,
   h3 {
     padding: 0;
+    padding-left: 5px;
     margin: 0;
-    line-height: 10px;
+    line-height: 15px;
     font-size: 20px;
     display: flex;
-    word-break: break-all;
-    padding-top: 0.5rem;
     padding-bottom: 0.2rem;
+    @media screen and (max-width: 600) {
+      font-size: 10px;
+    }
+  }
+  p {
+    line-height: 15px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    @media screen and (max-width: 600) {
+      font-size: 10px;
+    }
+    word-break: break-all;
   }
   height: 100%;
   overflow-x: wrap;
+`;
+
+export const commandLine = css`
+  align-items: center;
 `;
 export const inputBox = css`
   all: initial;
@@ -68,8 +83,20 @@ export const inputBox = css`
   font-size: 20px;
   padding-left: 0.5rem;
   padding-top: 0.5rem;
+  @media screen and (max-width: 600) {
+    font-size: 10px;
+  }
 `;
 
-export const widow = css`
-  position: relative;
+export const navbar = css`
+  height: 2rem;
+  position: sticky;
+  width: 100%;
+  background-color: #8f8d8d;
+  z-index: 5;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fafafafa;
 `;

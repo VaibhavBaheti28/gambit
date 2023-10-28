@@ -40,19 +40,17 @@ export const appContainer = css`
   width: 100%;
   justify-content: space-around;
   align-items: center;
-  ${typeof window !== "undefined"
-    ? window.innerWidth <= 500
-      ? { flexWrap: "wrap" }
-      : {}
-    : {}}
+  @media screen and (max-width: 600px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const app = css`
-  ${typeof window !== "undefined"
-    ? window.innerWidth <= 500
-      ? { height: 90, width: 90, padding: "1rem" }
-      : { height: 100, width: 100 }
-    : {}}
+  @media screen and (max-width: 600px) {
+    height: 90;
+    width: 90;
+    padding: 1rem;
+  }
   border-radius: 2rem;
   color: black;
   background: transparent;

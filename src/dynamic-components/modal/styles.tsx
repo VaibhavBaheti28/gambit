@@ -23,11 +23,12 @@ export const modal = css`
   overflow: hidden;
   animation: ${borderAnimation} 1s ease-in-out forwards;
   border-bottom: 1px solid black;
-  ${typeof window !== "undefined"
-    ? window.innerWidth <= 500
-      ? { bottom: "0", left: "0", right: "0", top: "0" }
-      : {}
-    : {}}
+  @media screen and (max-width: 600px) {
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+  }
 `;
 
 /* Modal content */
@@ -44,9 +45,9 @@ export const closeIcon = css`
   color: blue;
   cursor: pointer;
   z-index: 101;
-  ${typeof window !== "undefined"
-    ? window.innerWidth <= 500
-      ? { height: 20, width: 20, top: 0, right: 0 }
-      : { height: 30, width: 30 }
-    : {}}
+  font-size: 30px;
+  @media screen and (max-width: 600px) {
+    top: 0;
+    right: 0;
+  }
 `;
