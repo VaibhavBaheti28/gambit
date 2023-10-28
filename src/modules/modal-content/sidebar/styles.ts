@@ -1,3 +1,4 @@
+import { mediaQueryMaxWidth } from "@/styles/common-styles";
 import { css } from "@emotion/react";
 
 export const sidebar = css`
@@ -17,12 +18,13 @@ export const sidebar = css`
     padding: 0;
     border: 0;
     margin: 0;
-    font-size: 3vw;
-    ${typeof window !== "undefined"
-      ? window.innerWidth <= 500
-        ? { fontSize: "1.5rem" }
-        : {}
-      : {}}
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 600px) {
+      font-size: 18px;
+      padding: 1rem 0;
+    }
     padding: 1vw 0;
     width: 100%;
   }
@@ -37,5 +39,11 @@ export const explore = css`
   svg {
     width: 2vw;
     height: 2vw;
+  }
+  @media screen and (max-width: 600px) {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 `;

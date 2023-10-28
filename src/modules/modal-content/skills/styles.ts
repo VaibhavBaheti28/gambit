@@ -7,7 +7,10 @@ export const skillsContainer = css`
   padding-left: 1vw;
 
   li {
-    font-size: 2rem;
     list-style-type: square;
+    font-size: 30px;
+    @media screen and (max-width: 600px) {
+      font-size: 20px;
+    }
   }
 `;

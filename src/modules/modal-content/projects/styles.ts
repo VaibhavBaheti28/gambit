@@ -6,13 +6,18 @@ export const projectContainer = css`
   flex-direction: column;
   justify-content: flex-start;
   overflow-y: auto;
-  h1 {
+  a {
     padding: 0;
-
     margin: 0;
-    font-size: 3rem;
+    font-size: 40px;
+    @media screen and (max-width: 600px) {
+      font-size: 30px;
+    }
   }
-  p {
-    font-size: 1rem;
+  div {
+    font-size: 30px;
+    @media screen and (max-width: 600px) {
+      font-size: 20px;
+    }
   }
 `;

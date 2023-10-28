@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { inputBox, navbar, terminalContainer, terminalContent } from "./styles";
+import {
+  commandLine,
+  inputBox,
+  navbar,
+  terminalContainer,
+  terminalContent,
+} from "./styles";
 import { commands } from "./constants";
 import { useDispatch, useSelector } from "react-redux";
 import { updateString } from "@/store/mySlice";
@@ -82,7 +88,7 @@ export const Terminal = () => {
       return <Explorer />;
     default:
       return (
-        <div css={terminalContent}>
+        <div css={terminalContainer}>
           <div
             css={navbar}
             style={theme === "dark" ? { backgroundColor: "#2b2626" } : {}}
@@ -91,7 +97,7 @@ export const Terminal = () => {
           </div>
           <div
             id="terminalContent"
-            css={terminalContainer}
+            css={terminalContent}
             style={theme === "dark" ? { backgroundColor: "antiquewhite" } : {}}
             onClick={() => document.getElementById("input")?.focus()}
           >
@@ -100,7 +106,7 @@ export const Terminal = () => {
                 <div key={key} dangerouslySetInnerHTML={{ __html: line }} />
               );
             })}
-            <div>
+            <div css={commandLine}>
               <h3>Monarch@4Ever:~/$ </h3>
               <input
                 id="input"
