@@ -135,8 +135,17 @@ export const Contact = () => {
           };
           if (searchText(displayName.toLowerCase(), inputValue.toLowerCase()))
             return (
-              <div key={displayName} onClick={handleOnClick}>
+              <div
+                key={displayName}
+                onClick={handleOnClick}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
                 {Icon}
+                <span style={{ fontSize: "20px" }}>{displayName}</span>
               </div>
             );
         })}
