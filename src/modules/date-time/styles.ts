@@ -13,16 +13,13 @@ export const dateTime = css`
   padding: 1rem;
   display: flex;
   margin-top: 0.5vw;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 5rem;
-  ${typeof window !== "undefined"
-    ? window.innerWidth <= 500
-      ? { display: "none" }
-      : {}
-    : {}}
   span {
     font-size: 1vw;
+    @media screen and (max-width: 600px) {
+      font-size: 10px;
+    }
   }
 `;

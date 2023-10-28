@@ -15,19 +15,19 @@ export const screen = css`
 
 export const navStyles = css`
   min-height: 25px;
-  width: 98%;
+  width: fit-content;
   padding: 1 rem;
   font-size: 2vw;
   font-family: Verdana;
   filter: none;
   display: flex;
   margin-top: 0.5vw;
-  flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
-  gap: 5rem;
   span {
     font-size: 1vw;
+    @media screen and (max-width: 600px) {
+      font-size: 10px;
+    }
   }
 `;
 
