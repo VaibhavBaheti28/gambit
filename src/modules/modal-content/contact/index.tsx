@@ -44,7 +44,7 @@ export const items: {
           />
         </>
       ),
-      onClick: "",
+      onClick: "vaibhavbaheti99@gmail.com",
     },
     phone: {
       displayName: "Phone",
@@ -103,6 +103,18 @@ export const Contact = () => {
   const [inputValue, setInputValue] = useState<string>("");
   const router = useRouter();
 
+  const openInNewTab = (url: string) => {
+    const newTab = window.open(url, "_blank");
+    if (newTab) {
+      newTab.focus();
+    } else {
+      router.push(url);
+    }
+  };
+  const composeEmail = (emailAddress: string) => {
+    const mailtoLink = `mailto:${emailAddress}`;
+    window.open(mailtoLink, "_blank");
+  };
   return (
     <div css={screen}>
       <div style={{ width: "80%" }}>
@@ -132,7 +144,8 @@ export const Contact = () => {
         {Object.values(items.data).map((item) => {
           const { displayName, onClick, Icon, slug } = item;
           const handleOnClick = () => {
-            if (slug) router.push(slug);
+            if (slug) openInNewTab(slug);
+            else if (onClick) composeEmail(onClick);
           };
           if (searchText(displayName.toLowerCase(), inputValue.toLowerCase()))
             return (

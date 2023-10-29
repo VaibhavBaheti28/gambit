@@ -12,7 +12,7 @@ export const commands: {
   };
 } = {
   command: {
-    help: {
+    Help: {
       text: "About   Skills   Contact   Projects   clear",
     },
     About: {

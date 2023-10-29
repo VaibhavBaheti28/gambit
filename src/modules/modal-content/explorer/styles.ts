@@ -18,23 +18,27 @@ export const screen = css`
   overflow: hidden;
   height: 100%;
   width: 100%;
+
   @media screen and (max-width: 600px) {
-    font-size: 20px;
+    /* Mobile styles go here */
+    grid-template-columns: [f] 50% [t] 50% [end];
+    grid-template-rows: [f] 33.33% [s] 33.34% [t] 33.33% [end];
+    font-size: 16px; /* Decrease font size for mobile */
   }
-  grid-template-columns: [f] 33.33% [s] 33.34% [t] 33.33% [end];
-  grid-template-rows: [f] 50% [s] 50% [end];
-  background-image: linear-gradient(
-    to bottom,
-    #222,
-    #333,
-    #222
-  ); /* Dark background with a black middle section */
 
-  animation: ${borderAnimation} 5s infinite; /* Apply the border animation */
+  @media screen and (min-width: 601px) {
+    /* Styles for screens wider than 600px */
+    grid-template-columns: [f] 33.33% [s] 33.34% [t] 33.33% [end];
+    grid-template-rows: [f] 50% [s] 50% [end];
+    font-size: 20px; /* Reset font size for wider screens */
+  }
 
+  /* The rest of your screen styles here... */
+  background-image: linear-gradient(to bottom, #222, #333, #222);
+  animation: ${borderAnimation} 5s infinite;
   div:hover {
     cursor: pointer;
-    color: #fff; /* White text on hover */
+    color: #fff;
   }
 `;
 
@@ -54,32 +58,66 @@ export const innerDiv = css`
 `;
 
 export const about = css`
-  min-height: 100%;
-
-  grid-column-start: f;
-  grid-column-end: s;
-  grid-row-start: f;
-  grid-row-end: end;
+  grid-column: span 1; /* Make the "About" element span two columns on mobile */
+  grid-row: span 2;
   justify-self: center;
   color: #fff; /* White text */
   font-size: 1.5rem; /* Larger font size */
   display: flex;
   align-items: center;
   ${innerDiv}
-  background-color: #0077b6; /* Background color for the first div */
 
   &:hover {
     background-color: #00a8cc; /* Darker background on hover */
     transform: scale(1.05); /* Slightly scale up on hover */
   }
+
+  @media screen and (max-width: 600px) {
+    /* Mobile styles for "About" div */
+    grid-row: span 1; /* Make the "About" element span one column on mobile */
+    grid-column: span 2;
+  }
+
+  ::before {
+    content: "🎮";
+    font-size: 20vh; /* Adjust the size as needed */
+    position: absolute;
+
+    z-index: -1; /* Place the gaming console icon behind the content */
+  }
+`;
+
+export const skills = css`
+  min-height: 100%;
+  grid-column: span 1; /* Make the "Skills" element span two columns on mobile */
+  grid-row: span 1;
+  justify-self: center;
+  color: #fff; /* White text */
+  font-size: 1.5rem; /* Larger font size */
+  display: flex;
+  align-items: center;
+  ${innerDiv}
+  background-color: #43aa8b; /* Background color for the third div */
+
+  &:hover {
+    background-color: #90be6d; /* Darker background on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+  }
+
+  @media screen and (max-width: 600px) {
+    /* Mobile styles for "Skills" div */
+    grid-column: span 1; /* Make the "Skills" element span one column on mobile */
+  }
+  ::before {
+    content: "🔧";
+    font-size: 20vh; /* Adjust the size as needed */
+    position: absolute;
+    z-index: -1;
+  }
 `;
 
 export const projects = css`
   min-height: 100%;
-  grid-column-start: s;
-  grid-column-end: t;
-  grid-row-start: f;
-  grid-row-end: s;
   justify-self: center;
   color: #fff; /* White text */
   font-size: 1.5rem; /* Larger font size */
@@ -93,35 +131,20 @@ export const projects = css`
     background-color: #f3722c; /* Darker background on hover */
     transform: scale(1.05); /* Slightly scale up on hover */
   }
-`;
-
-export const skills = css`
-  min-height: 100%;
-  grid-column-start: s;
-  grid-column-end: t;
-  grid-row-start: s;
-  grid-row-end: end;
-  justify-self: center;
-  color: #fff; /* White text */
-  font-size: 1.5rem; /* Larger font size */
-  display: flex;
-  align-items: center;
-
-  ${innerDiv}
-  & background-color: #43aa8b; /* Background color for the third div */
-
-  &:hover {
-    background-color: #90be6d; /* Darker background on hover */
-    transform: scale(1.05); /* Slightly scale up on hover */
+  @media screen and (max-width: 600px) {
+    /* Mobile styles for "Skills" div */
+    grid-column: span 1; /* Make the "Skills" element span one column on mobile */
+  }
+  ::before {
+    content: "🚀";
+    font-size: 20vh;
+    position: absolute;
+    z-index: -1;
   }
 `;
 
 export const certificate = css`
   min-height: 100%;
-  grid-column-start: t;
-  grid-column-end: end;
-  grid-row-start: f;
-  grid-row-end: s;
   justify-self: center;
   color: #fff; /* White text */
   font-size: 1.5rem; /* Larger font size */
@@ -135,16 +158,28 @@ export const certificate = css`
     background-color: #f9c74f; /* Darker background on hover */
     transform: scale(1.05); /* Slightly scale up on hover */
   }
+  @media screen and (max-width: 600px) {
+    /* Mobile styles for "Skills" div */
+    grid-column: span 1; /* Make the "Skills" element span one column on mobile */
+  }
+  ::before {
+    content: "📜"; /* Unicode character for a certificate icon */
+    font-size: 20vh;
+    position: absolute;
+    z-index: -1;
+  }
 `;
 
 export const contact = css`
+  .contact::before {
+    content: "📧"; /* Unicode character for an email icon */
+    font-size: 2rem;
+    margin-right: 0.5rem;
+  }
   min-height: 100%;
-  grid-column-start: t;
-  grid-column-end: end;
-  grid-row-start: s;
-  grid-row-end: end;
   justify-self: center;
-  color: #fff; /* White text */
+
+  color: #0077b6; /* White text */
   font-size: 1.5rem; /* Larger font size */
   display: flex;
   align-items: center;
@@ -154,6 +189,16 @@ export const contact = css`
   &:hover {
     background-color: #0077b6; /* Darker background on hover */
     transform: scale(1.05); /* Slightly scale up on hover */
+  }
+  @media screen and (max-width: 600px) {
+    /* Mobile styles for "Skills" div */
+    grid-column: span 1; /* Make the "Skills" element span one column on mobile */
+  }
+  ::before {
+    content: "📧";
+    font-size: 20vh;
+    position: absolute;
+    z-index: -1;
   }
 `;
 

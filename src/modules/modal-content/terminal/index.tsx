@@ -37,7 +37,7 @@ export const Terminal = () => {
         return setOutput([
           ...output,
           `<h3>Monarch@4Ever:~/$</h3><p>&nbsp;${input}</p>`,
-          commands.command[input].text || "",
+          commands.command[capitalizeFirstLetter(input)].text || "",
         ]);
       else if (commands.command[capitalizeFirstLetter(input)].modalComponent) {
         console.log(commands.command[capitalizeFirstLetter(input)]);
