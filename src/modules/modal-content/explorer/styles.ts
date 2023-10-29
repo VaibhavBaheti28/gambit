@@ -135,7 +135,7 @@ export const projects = css`
     /* Mobile styles for "Skills" div */
     grid-column: span 1; /* Make the "Skills" element span one column on mobile */
   }
-  ::before {
+  &::before {
     content: "🚀";
     font-size: 20vh;
     position: absolute;

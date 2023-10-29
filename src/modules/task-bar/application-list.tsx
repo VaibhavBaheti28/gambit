@@ -27,7 +27,7 @@ export const applicationList: {
     resume: {
       displayName: "resume",
       Icon: <DescriptionIcon />,
-      onClick: "/resume",
+      onClick: "/gambit/resume",
     },
     contact: {
       displayName: "contact",
