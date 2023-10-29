@@ -12,7 +12,7 @@ export const screen = css`
   animation: gradientAnimation 10s ease infinite; /* Add animation for a subtle effect */
   color: white; /* Light text color for visibility on the lighter background */
   height: 100%;
-  border-radius: 1rem;
+  border-radius: 0.8rem;
 
   @keyframes gradientAnimation {
     0% {
