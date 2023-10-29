@@ -27,6 +27,6 @@ export const commands: {
     Projects: {
       modalComponent: <Projects />,
     },
-    clear: {},
+    Clear: {},
   },
 };

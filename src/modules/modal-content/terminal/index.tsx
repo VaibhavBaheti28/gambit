@@ -23,17 +23,25 @@ export const Terminal = () => {
   const dispatch = useDispatch();
   const myString = useSelector((state: RootState) => state.myReducer.myString);
   const theme = useSelector((state: RootState) => state.myReducer.theme);
+
+  function capitalizeFirstLetter(str: string): string {
+    if (str.length === 0) return str; // Handle empty strings
+
+    // Use toUpperCase() to make the first character uppercase, and slice() to get the rest of the string
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
   const handleExecuteCommand = () => {
-    if (commands.command[input]) {
-      if (commands.command[input].text)
+    if (commands.command[capitalizeFirstLetter(input)]) {
+      if (commands.command[capitalizeFirstLetter(input)].text)
         return setOutput([
           ...output,
           `<h3>Monarch@4Ever:~/$</h3><p>&nbsp;${input}</p>`,
           commands.command[input].text || "",
         ]);
-      else if (commands.command[input].modalComponent) {
-        console.log(commands.command[input]);
-        dispatch(updateString(input));
+      else if (commands.command[capitalizeFirstLetter(input)].modalComponent) {
+        console.log(commands.command[capitalizeFirstLetter(input)]);
+        dispatch(updateString(capitalizeFirstLetter(input)));
 
         return setOutput([
           ...output,
@@ -61,6 +69,7 @@ export const Terminal = () => {
     if (event.key === "Enter") {
       event.preventDefault(); // Prevent the default Enter key behavior (e.g., form submission)
       handleExecuteCommand();
+
       setInput("");
     }
   };

@@ -46,7 +46,7 @@ const DesktopScreen = () => {
       <div style={configStyles}>
         <div
           css={configContent}
-          style={theme === "dark" ? { backgroundColor: "#4d3f2c" } : {}}
+          style={theme === "dark" ? { backgroundColor: "none" } : {}}
         >
           <div
             style={{ justifySelf: "center" }}

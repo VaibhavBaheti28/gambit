@@ -3,6 +3,8 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import { dateTime } from "./styles";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/reducers/reducers";
 
 export const DateTime = () => {
   const [currentTime, setCurrentTime] = useState<string>(getCurrentTime());
@@ -31,9 +33,9 @@ export const DateTime = () => {
 
     return timeString;
   }
-
+  const theme = useSelector((state: RootState) => state.myReducer.theme);
   return (
-    <div css={dateTime}>
+    <div css={dateTime} style={theme === "dark" ? { color: "white" } : {}}>
       <span style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
         <CalendarTodayIcon />
         {currentDate}

@@ -102,6 +102,7 @@ const itemNames = ["Whatsapp", "Email", "Phone", "Linkedin", "Github"];
 export const Contact = () => {
   const [inputValue, setInputValue] = useState<string>("");
   const router = useRouter();
+
   return (
     <div css={screen}>
       <div style={{ width: "80%" }}>

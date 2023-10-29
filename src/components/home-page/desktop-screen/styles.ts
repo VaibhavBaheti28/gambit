@@ -14,6 +14,11 @@ export const configContent = css`
   grid-template-columns: [f] 50% [s] 50% [end];
   grid-template-rows: [f] 4rem [s] 4rem [end];
   align-items: center;
+  opacity: 0.5;
+  @media screen and (min-width: 800px) {
+    right: 11rem;
+    top: 0.6rem;
+  }
 `;
 
 export const name = css`

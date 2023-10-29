@@ -5,11 +5,9 @@ export const screen = css`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(
-    135deg,
-    #6b307c,
-    #710606ed
-  ); /* Lighter gradient background */
+  /* Define a circular gradient background */
+  background: radial-gradient(circle, #005b41, #232d3f);
+  /* Lighter gradient background */
   background-size: 400% 400%;
   animation: gradientAnimation 10s ease infinite; /* Add animation for a subtle effect */
   color: white; /* Light text color for visibility on the lighter background */
@@ -33,7 +31,7 @@ export const search = css`
   margin-top: 2vw;
   margin-bottom: 3vw;
   border-radius: 2rem;
-  background: #444; /* Dark background color */
+  background: #008170; /* Dark background color */
 
   label.Mui-focused {
     top: -10px;
