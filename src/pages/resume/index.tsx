@@ -1,10 +1,9 @@
+import { resume } from "./styles";
+
 export const Resume = () => {
   return (
     <div>
-      <embed
-        src="static/Resume.pdf"
-        style={{ display: "block", width: "100%", minHeight: "99vw" }}
-      />
+      <embed src="static/Resume.pdf" css={resume} />
     </div>
   );
 };
