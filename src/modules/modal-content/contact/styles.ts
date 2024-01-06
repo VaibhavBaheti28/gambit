@@ -73,7 +73,9 @@ export const app = css`
   border-radius: 2rem;
   color: white; /* Light text color for visibility on dark background */
   background: transparent;
-  cursor: pointer;
+  cursor: url(https://cdn.custom-cursor.com/db/pointer/32/cute_chill_cat_pointer.png),
+    default !important;
+
   transition: box-shadow 0.3s ease-in-out;
 
   /* Shadow effect on hover */

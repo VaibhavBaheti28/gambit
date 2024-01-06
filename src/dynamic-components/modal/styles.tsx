@@ -43,7 +43,9 @@ export const closeIcon = css`
   top: 5rem;
   right: 8rem;
   color: blue;
-  cursor: pointer;
+
+  cursor: url(https://cdn.custom-cursor.com/db/pointer/32/cute_chill_cat_pointer.png),
+    default !important;
   z-index: 101;
   font-size: 30px;
   @media screen and (max-width: 600px) {

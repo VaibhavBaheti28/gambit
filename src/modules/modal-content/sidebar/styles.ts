@@ -29,7 +29,9 @@ export const sidebar = css`
     width: 100%;
   }
   div:hover {
-    cursor: pointer;
+    cursor: url(https://cdn.custom-cursor.com/db/pointer/32/cute_chill_cat_pointer.png),
+      default !important;
+
     background-color: darkgray;
   }
 `;

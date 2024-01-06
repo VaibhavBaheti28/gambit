@@ -58,7 +58,9 @@ export const Projects = () => {
                 key={project.id}
                 style={{
                   padding: "10px",
-                  cursor: "pointer",
+                  cursor: `url(https://cdn.custom-cursor.com/db/pointer/32/cute_chill_cat_pointer.png),
+    default !important`,
+
                   fontSize: "30px",
                 }}
               >

@@ -37,7 +37,9 @@ export const screen = css`
   background-image: linear-gradient(to bottom, #222, #333, #222);
   animation: ${borderAnimation} 5s infinite;
   div:hover {
-    cursor: pointer;
+    cursor: url(https://cdn.custom-cursor.com/db/pointer/32/cute_chill_cat_pointer.png),
+      default !important;
+
     color: #fff;
   }
 `;
@@ -54,7 +56,8 @@ export const innerDiv = css`
   transition:
     background-color 0.3s,
     transform 0.3s; /* Smooth transition on hover */
-  cursor: pointer;
+  cursor: url(https://cdn.custom-cursor.com/db/pointer/32/cute_chill_cat_pointer.png),
+    default !important;
 `;
 
 export const about = css`
